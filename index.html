@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vista Social Ambassador Program — Preview</title>
+  <meta name="description" content="Internal preview: Vista Social Ambassador Program presentation, public landing page, and per-ambassador lander template." />
+  <link rel="icon" href="media/assets/icon-logo-light.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --vista-blue: #0063E3;
+      --vista-purple: #8C52FF;
+      --vista-pink: #FF66C4;
+      --ink: #0F1530;
+      --ink-soft: #4A5174;
+      --line: #E5E8F2;
+      --bg: #F8F9FC;
+      --grad: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      color: var(--ink);
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 48px;
+      border-bottom: 1px solid var(--line);
+      background: #FFFFFF;
+    }
+    nav .brand img { height: 28px; display: block; }
+    nav .right { font-size: 14px; color: var(--ink-soft); font-weight: 500; }
+    nav .right .pill {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      background: linear-gradient(135deg, rgba(0,99,227,0.08), rgba(140,82,255,0.08));
+      color: var(--vista-blue); font-weight: 600; font-size: 12px; letter-spacing: 0.4px;
+      text-transform: uppercase; margin-left: 10px;
+    }
+    .hero {
+      padding: 96px 48px 72px;
+      text-align: center;
+      max-width: 920px; margin: 0 auto;
+    }
+    .hero .kicker {
+      display: inline-block;
+      font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 700;
+      color: var(--vista-blue);
+      padding: 6px 14px; border-radius: 999px;
+      background: rgba(0,99,227,0.08);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.05; font-weight: 800; letter-spacing: -0.02em;
+      margin: 0 0 20px;
+    }
+    h1 .grad {
+      background: var(--grad);
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 19px; color: var(--ink-soft); max-width: 680px; margin: 0 auto;
+    }
+    .grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      max-width: 1200px; margin: 0 auto; padding: 24px 48px 96px;
+    }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; padding-bottom: 64px; } }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #FFFFFF;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex; flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(15, 21, 48, 0.10);
+      border-color: rgba(0,99,227,0.4);
+    }
+    .card .preview {
+      height: 200px; position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .card.c1 .preview { background: linear-gradient(135deg, #0063E3 0%, #8C52FF 100%); }
+    .card.c2 .preview { background: linear-gradient(135deg, #8C52FF 0%, #FF66C4 100%); }
+    .card.c3 .preview { background: linear-gradient(135deg, #0F1530 0%, #1F2547 60%, #0063E3 100%); }
+    .card .preview .label {
+      position: absolute; top: 16px; left: 16px;
+      padding: 4px 10px; border-radius: 999px;
+      background: rgba(255,255,255,0.95); color: var(--ink);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
+    }
+    .card .preview .badge {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      color: #FFFFFF; font-weight: 700;
+    }
+    .card .preview .badge .big { font-size: 22px; line-height: 1.15; display: block; margin-bottom: 4px; }
+    .card .preview .badge .sub { font-size: 13px; opacity: 0.9; font-weight: 500; }
+    .card .body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+    .card p { margin: 0 0 16px; font-size: 14px; color: var(--ink-soft); flex: 1; }
+    .card .meta { font-size: 12px; color: var(--ink-soft); margin-bottom: 16px; }
+    .card .meta code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 11px; color: var(--ink); }
+    .cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 18px; border-radius: 10px;
+      background: var(--vista-blue); color: #FFFFFF;
+      font-weight: 600; font-size: 14px;
+      transition: background 0.2s ease;
+    }
+    .cta:hover { background: #0050BB; }
+    .cta::after { content: '→'; font-size: 16px; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 48px;
+      font-size: 13px; color: var(--ink-soft);
+      text-align: center;
+    }
+    footer strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="https://vistasocial.com" class="brand"><img src="media/assets/logo-horizontal-light.png" alt="Vista Social" /></a>
+    <div class="right">Ambassador Program preview <span class="pill">Internal</span></div>
+  </nav>
+
+  <section class="hero">
+    <span class="kicker">Live preview</span>
+    <h1>Vista Social <span class="grad">Ambassador Program</span></h1>
+    <p>Three artifacts behind the program: the team-facing presentation, the public landing page that ambassadors apply through, and the per-ambassador lander template that turns each approved ambassador into their own conversion path.</p>
+  </section>
+
+  <section class="grid">
+    <a href="pages/ambassador-program-presentation/" class="card c1">
+      <div class="preview">
+        <span class="label">01 — Presentation</span>
+        <div class="badge"><span class="big">The team-facing pitch deck</span><span class="sub">Open as a scrolling deck</span></div>
+      </div>
+      <div class="body">
+        <h3>Ambassador Program Presentation</h3>
+        <p>The internal scrollable deck that walks the team through the program: rationale, mechanics, sponsor system, bonus library, launch sequence. Use this when introducing the program to stakeholders or new hires.</p>
+        <div class="meta">Path: <code>/pages/ambassador-program-presentation/</code></div>
+        <span class="cta">Open presentation</span>
+      </div>
+    </a>
+
+    <a href="pages/ambassador-program/" class="card c2">
+      <div class="preview">
+        <span class="label">02 — Public landing page</span>
+        <div class="badge"><span class="big">The application page</span><span class="sub">Live design preview</span></div>
+      </div>
+      <div class="body">
+        <h3>Ambassador Program — Public Page</h3>
+        <p>The page candidates land on when they apply. Hero, what-this-is, who-it's-for, five benefit pillars, what-we-ask, three-step apply flow, FAQ, final CTA. The visual reference for the production page on vistasocial.com.</p>
+        <div class="meta">Path: <code>/pages/ambassador-program/</code></div>
+        <span class="cta">Open landing page</span>
+      </div>
+    </a>
+
+    <a href="pages/ambassador-lander-template/" class="card c3">
+      <div class="preview">
+        <span class="label">03 — Per-ambassador lander</span>
+        <div class="badge"><span class="big">The conversion lander template</span><span class="sub">Filled in with Chris as example</span></div>
+      </div>
+      <div class="body">
+        <h3>Per-Ambassador Lander Template</h3>
+        <p>The template each approved ambassador gets at <code>vistasocial.com/a/{slug}</code>. Combined creator × Vista mark, personal video block, "in their words" voice section, exclusive offer card, co-branded bonus grid, and First Promoter tracking baked into every CTA.</p>
+        <div class="meta">Path: <code>/pages/ambassador-lander-template/</code> &middot; Example slug: <code>chris</code></div>
+        <span class="cta">Open lander template</span>
+      </div>
+    </a>
+  </section>
+
+  <footer>
+    <p><strong>Internal preview only.</strong> These pages are under active design review and not yet live on vistasocial.com.</p>
+    <p>Source repo: <a href="https://github.com/dawid-ai/VistaSocialAmbassadorProgram" style="color: var(--vista-blue); font-weight: 600;">github.com/dawid-ai/VistaSocialAmbassadorProgram</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<!--
+  Vista Social — Per-Ambassador Conversion Lander
+  Template URL: vistasocial.com/a/chris
+  Tracking: append ?fp_ref=chris to all CTA hrefs (First Promoter)
+
+  PLACEHOLDERS to substitute at deploy time:
+    chris                  e.g. "chris"
+    Chris Cunningham       e.g. "Chris Cunningham"
+    Chris e.g. "Chris"
+    Ex-ClickUp · Founding Ambassador       e.g. "Ex-ClickUp · Founding Ambassador"
+    chriscunningham.com       e.g. "chriscunningham.com"
+    {{ambassador_photo}}      url to headshot, square, transparent or white bg
+    {{ambassador_video_url}}  YouTube/Loom/Vimeo embed URL (or fallback poster)
+    B2B social teams        e.g. "B2B social teams"
+    30             e.g. "30"
+    20     e.g. "20"
+    {{quote_para_1}} {{quote_para_2}} {{quote_para_3}}  (creator's voice, light edit)
+    $1,940     e.g. "$1,940"
+    Bonus blocks: hard-coded for now, would loop in real templating
+
+  Reference creator: Chris Cunningham (used as fill for visual review)
+-->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chris Cunningham × Vista Social — A 30-day trial + the full bonus stack</title>
+<meta name="description" content="Chris Cunningham's pick for B2B social teams. Start a 30-day Vista Social trial through this page and unlock $1,940 of bonus templates, playbooks, and AI prompts." />
+<link rel="icon" href="../../media/assets/icon-logo-light.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vs-blue: #0063E3;
+    --vs-blue-hover: #0052C4;
+    --vs-purple: #8C52FF;
+    --vs-pink: #FF66C4;
+    --vs-blue-tint: #91BCF3;
+    --vs-purple-tint: #E2D4FF;
+    --vs-pink-tint: #FFD9F0;
+    --ink: #101010;
+    --ink-soft: #3A3A3A;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --surface: #FFFFFF;
+    --surface-alt: #F8F9FB;
+    --surface-dark: #0A0F1F;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--surface);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  @media (min-width: 768px) { .container { padding: 0 48px; } }
+  section { padding: 80px 0; }
+  @media (max-width: 767px) { section { padding: 56px 0; } }
+
+  h1, h2, h3, h4 { color: var(--ink); letter-spacing: -0.015em; line-height: 1.15; }
+  h1 { font-size: clamp(34px, 5vw, 52px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(26px, 3.5vw, 36px); font-weight: 700; }
+  h3 { font-size: 22px; font-weight: 700; }
+  h4 { font-size: 17px; font-weight: 600; }
+  p { color: var(--ink-soft); font-size: 16px; }
+  .lead { font-size: clamp(17px, 1.7vw, 19px); line-height: 1.6; color: var(--ink-soft); }
+  .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--vs-blue); margin-bottom: 16px; }
+  .grad {
+    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none; cursor: pointer; transition: all 150ms ease; border: none; font-family: inherit; }
+  .btn-primary { background: var(--vs-blue); color: #fff; }
+  .btn-primary:hover { background: var(--vs-blue-hover); transform: translateY(-1px); box-shadow: 0 12px 24px rgba(0,99,227,0.28); }
+  .btn-large { padding: 18px 40px; font-size: 17px; }
+  .btn-on-dark { background: #fff; color: var(--vs-blue); }
+  .btn-on-dark:hover { background: #F0F6FF; }
+
+  /* ─── Minimal Nav (lander has lighter chrome than main site) ─── */
+  .nav { border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 50; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: 1320px; margin: 0 auto; }
+  .nav-brand img { height: 32px; display: block; }
+  .nav-cta { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+  .nav-cta .partner-badge { color: var(--muted); font-size: 13px; }
+  .nav-cta .partner-badge strong { color: var(--ink); font-weight: 600; }
+  .nav-cta .btn { padding: 10px 20px; font-size: 14px; }
+
+  /* ─── HERO: co-branded creator + brand mark ─── */
+  .hero { position: relative; padding: 80px 0 64px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 1100px; height: 700px;
+    background: radial-gradient(ellipse at center, rgba(140,82,255,0.10) 0%, rgba(0,99,227,0.08) 30%, rgba(255,102,196,0.06) 60%, transparent 75%);
+    z-index: 0; pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; text-align: center; max-width: 920px; margin: 0 auto; }
+
+  /* The combined creator × brand mark */
+  .combo-mark {
+    display: inline-flex; align-items: center; gap: 24px; margin-bottom: 32px;
+    padding: 16px 28px 16px 16px;
+    background: #fff; border: 1px solid var(--border); border-radius: 100px;
+    box-shadow: 0 12px 32px rgba(16,16,16,0.06);
+    position: relative;
+  }
+  .combo-mark::before {
+    content: ""; position: absolute; inset: -2px; border-radius: 102px;
+    background: linear-gradient(135deg, #0063E3, #8C52FF, #FF66C4);
+    z-index: -1; opacity: 0.18;
+  }
+  .combo-photo {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--vs-purple-tint), var(--vs-pink-tint));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--vs-purple); font-size: 20px;
+    flex: none;
+    /* Replace background with: background-image: url({{ambassador_photo}}); background-size: cover; background-position: center; */
+  }
+  .combo-x { font-size: 18px; color: var(--muted); font-weight: 500; }
+  .combo-brand { display: flex; align-items: center; gap: 10px; }
+  .combo-brand img { height: 56px; display: block; }
+  @media (max-width: 600px) { .combo-mark { padding: 12px 20px 12px 12px; gap: 14px; } .combo-brand img { height: 44px; } }
+
+  .hero h1 { margin-bottom: 24px; }
+  .hero .lead { margin: 0 auto 36px; max-width: 720px; }
+
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 24px; }
+  .trust-row { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: center; color: var(--muted); font-size: 13px; }
+  .trust-row .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); }
+
+  /* ─── Video block ─── */
+  .video-section { padding-top: 24px; }
+  .video-wrap { max-width: 880px; margin: 0 auto; }
+  .video-frame {
+    aspect-ratio: 16/9; border-radius: 20px;
+    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
+    position: relative; overflow: hidden;
+    box-shadow: 0 32px 64px rgba(16,16,16,0.16);
+  }
+  .video-frame::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.4) 100%);
+  }
+  .play-btn {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 84px; height: 84px; border-radius: 50%;
+    background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: transform 200ms ease;
+  }
+  .play-btn:hover { transform: translate(-50%, -50%) scale(1.05); }
+  .play-btn::after { content: ""; width: 0; height: 0; border-left: 24px solid var(--vs-blue); border-top: 16px solid transparent; border-bottom: 16px solid transparent; margin-left: 6px; }
+  .video-caption { text-align: center; margin-top: 20px; color: var(--muted); font-size: 14px; }
+
+  /* ─── Why I use Vista Social — creator's voice ─── */
+  .voice { background: var(--surface-alt); }
+  .voice-grid { display: grid; grid-template-columns: 1fr; gap: 48px; max-width: 1080px; margin: 0 auto; align-items: start; }
+  @media (min-width: 900px) { .voice-grid { grid-template-columns: 280px 1fr; gap: 64px; } }
+  .voice-card { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 32px 24px; text-align: center; box-shadow: 0 12px 32px rgba(16,16,16,0.04); }
+  .voice-photo { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--vs-purple-tint), var(--vs-pink-tint)); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--vs-purple); font-size: 36px; margin: 0 auto 16px; }
+  .voice-card .name { font-weight: 700; font-size: 17px; margin-bottom: 4px; }
+  .voice-card .role { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .voice-card a { color: var(--vs-blue); text-decoration: none; font-size: 14px; font-weight: 500; }
+  .voice-content .eyebrow { color: var(--vs-purple); }
+  .voice-content h2 { margin-bottom: 24px; }
+  .voice-content p { font-size: 17px; line-height: 1.75; margin-bottom: 16px; color: var(--ink); }
+  .voice-content p:last-child { margin-bottom: 0; }
+  .voice-content .signoff { margin-top: 24px; font-style: italic; color: var(--ink-soft); }
+
+  /* ─── Exclusive offer block ─── */
+  .offer { padding: 64px 0; }
+  .offer-card {
+    max-width: 980px; margin: 0 auto;
+    background: linear-gradient(135deg, rgba(0,99,227,0.04), rgba(140,82,255,0.04), rgba(255,102,196,0.04));
+    border: 1px solid var(--vs-purple-tint);
+    border-radius: 24px;
+    padding: 48px;
+    text-align: center;
+    position: relative;
+  }
+  .offer-pill { display: inline-block; padding: 6px 14px; background: linear-gradient(135deg, #0063E3, #8C52FF, #FF66C4); color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 20px; margin-bottom: 20px; }
+  .offer-card h2 { margin-bottom: 16px; }
+  .offer-card .lead { margin: 0 auto 28px; max-width: 640px; }
+  .offer-stack { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 28px; }
+  .offer-stack .pill { padding: 8px 16px; background: #fff; border: 1px solid var(--border); border-radius: 20px; font-size: 14px; font-weight: 500; color: var(--ink); }
+  .offer-stack .pill strong { color: var(--vs-blue); font-weight: 700; }
+  @media (max-width: 600px) { .offer-card { padding: 32px 24px; } }
+
+  /* ─── Bonus stack ─── */
+  .bonuses { background: var(--surface-alt); }
+  .bonuses-header { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+  .value-line { display: inline-block; padding: 6px 14px; background: #fff; border: 1px solid var(--border); border-radius: 20px; font-size: 13px; color: var(--ink); margin-top: 16px; }
+  .value-line strong { color: var(--vs-blue); font-weight: 700; }
+  .bonuses-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1080px; margin: 0 auto; }
+  @media (min-width: 700px) { .bonuses-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .bonuses-grid { grid-template-columns: repeat(3, 1fr); } }
+  .bonus { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 200ms ease; display: flex; flex-direction: column; gap: 12px; }
+  .bonus:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(16,16,16,0.06); border-color: var(--vs-purple-tint); }
+  .bonus-cover {
+    aspect-ratio: 4/3; border-radius: 10px;
+    display: flex; align-items: flex-end; padding: 16px;
+    color: #fff; font-weight: 700; font-size: 13px;
+    position: relative; overflow: hidden;
+  }
+  .bonus-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%); }
+  .bonus-cover span { position: relative; z-index: 1; line-height: 1.3; }
+  .cover-1 { background: linear-gradient(135deg, #0063E3, #8C52FF); }
+  .cover-2 { background: linear-gradient(135deg, #8C52FF, #FF66C4); }
+  .cover-3 { background: linear-gradient(135deg, #FF66C4, #FFA0DA); }
+  .cover-4 { background: linear-gradient(135deg, #3081E8, #0063E3); }
+  .cover-5 { background: linear-gradient(135deg, #B894FF, #8C52FF); }
+  .bonus h4 { font-size: 16px; }
+  .bonus p { font-size: 14px; line-height: 1.5; }
+  .bonus .meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  .bonus .meta .value { color: var(--vs-blue); font-weight: 700; }
+
+  /* Co-brand strip on bonus covers */
+  .bonus-cobrand { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; z-index: 1; font-size: 11px; color: rgba(255,255,255,0.9); }
+  .bonus-cobrand .ambassador { font-weight: 600; }
+  .bonus-cobrand .vs { opacity: 0.85; }
+
+  /* ─── Why Vista Social (lightweight feature highlights) ─── */
+  .features-header { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .features { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 1080px; margin: 0 auto; }
+  @media (min-width: 700px) { .features { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .features { grid-template-columns: repeat(3, 1fr); } }
+  .feature { padding: 24px; border: 1px solid var(--border); border-radius: 14px; background: #fff; }
+  .feature-icon { width: 40px; height: 40px; border-radius: 10px; background: #F0F6FF; color: var(--vs-blue); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 14px; }
+  .feature h4 { margin-bottom: 6px; }
+  .feature p { font-size: 14px; line-height: 1.55; }
+
+  /* ─── Final CTA ─── */
+  .final-cta {
+    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
+    color: #fff; text-align: center; padding: 96px 0;
+  }
+  .final-cta .eyebrow { color: rgba(255,255,255,0.85); }
+  .final-cta h2 { color: #fff; margin-bottom: 20px; font-size: clamp(28px, 4vw, 44px); }
+  .final-cta p { color: rgba(255,255,255,0.92); font-size: 18px; max-width: 640px; margin: 0 auto 32px; }
+  .final-cta .micro { color: rgba(255,255,255,0.75); font-size: 13px; margin-top: 16px; }
+
+  /* ─── Footer ─── */
+  footer { background: var(--surface-dark); color: rgba(255,255,255,0.7); padding: 48px 0 28px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 24px; }
+  .footer-top { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; }
+  .footer-brand img { height: 28px; display: block; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; }
+  .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .footer-links a:hover { color: #fff; }
+  .disclosure { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .disclosure strong { color: rgba(255,255,255,0.75); font-weight: 600; }
+  .copyright { font-size: 12px; color: rgba(255,255,255,0.45); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="https://vistasocial.com" class="nav-brand"><img src="../../media/assets/logo-horizontal-light.png" alt="Vista Social" /></a>
+    <div class="nav-cta">
+      <span class="partner-badge">Recommended by <strong>Chris Cunningham</strong></span>
+      <a href="#start" class="btn btn-primary">Start trial →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ─── HERO with combined creator × brand mark ─── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="combo-mark">
+        <div class="combo-photo" style="background-image:url('../chris.jpg'); background-size:cover; background-position:center;"></div>
+        <span class="combo-x">×</span>
+        <div class="combo-brand"><img src="../../media/assets/logo-horizontal-light.png" alt="Vista Social" /></div>
+      </div>
+      <h1>Chris's pick for <span class="grad">B2B social teams</span>.</h1>
+      <p class="lead">Start a 30-day Vista Social trial through this page and unlock Chris's full bonus stack — templates, playbooks, and AI prompts worth $1,940, free.</p>
+      <div class="hero-ctas">
+        <a href="https://vistasocial.com/signup?fp_ref=chris" id="start" class="btn btn-primary btn-large">Start your 30-day trial →</a>
+      </div>
+      <div class="trust-row">
+        <span>⭐ 4.8 on G2</span>
+        <span class="dot"></span>
+        <span>20% off year one</span>
+        <span class="dot"></span>
+        <span>No credit card to start</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PERSONAL VIDEO ─── -->
+<section class="video-section" style="padding-top: 0;">
+  <div class="container">
+    <div class="video-wrap">
+      <div class="video-frame">
+        <div class="play-btn"></div>
+      </div>
+      <p class="video-caption">Chris on why he runs his social on Vista Social — 90 seconds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CREATOR'S VOICE — "Why I use Vista Social" ─── -->
+<section class="voice">
+  <div class="container">
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-photo" style="background-image:url('../chris.jpg'); background-size:cover; background-position:center;"></div>
+        <div class="name">Chris Cunningham</div>
+        <div class="role">Ex-ClickUp · Founding Ambassador</div>
+        <a href="https://chriscunningham.com" target="_blank">chriscunningham.com →</a>
+      </div>
+      <div class="voice-content">
+        <span class="eyebrow">In Chris's words</span>
+        <h2>Why I run my social on Vista Social.</h2>
+        <p>I've spent ten years building social presence — at ClickUp, in agencies, for my own thing. I've used every tool in the category. Most of them are built for someone (usually an enterprise team with five seats and a procurement department) that isn't me. Vista Social is the first one I've stuck with for more than a quarter.</p>
+        <p>The thing that actually changed my workflow is having scheduling, listening, and the inbox in the same place. The AI assistant cut my caption-writing time in half — and unlike most "AI features," it actually sounds like me after a few rounds of training. The white-label client reports are the only ones I'd send without rebuilding them in a deck first.</p>
+        <p>If you're juggling more than two accounts and you don't already have a tool you love, this is the one I'd start with. The trial is the full product — no feature gates, no "talk to sales" — so you'll know in a week whether it fits how you work.</p>
+        <p class="signoff">— Chris</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXCLUSIVE OFFER ─── -->
+<section class="offer">
+  <div class="container">
+    <div class="offer-card">
+      <span class="offer-pill">Exclusive · This page only</span>
+      <h2>The Chris stack.</h2>
+      <p class="lead">Start your trial through this page and you get Chris's curated bonus stack on top of the standard Vista Social trial — automatically, no codes to remember.</p>
+      <div class="offer-stack">
+        <span class="pill"><strong>30-day</strong> free trial (vs. standard 14)</span>
+        <span class="pill"><strong>20% off</strong> year one</span>
+        <span class="pill"><strong>5 bonus assets</strong> ($1,940 value)</span>
+        <span class="pill"><strong>Concierge onboarding</strong></span>
+      </div>
+      <a href="https://vistasocial.com/signup?fp_ref=chris" class="btn btn-primary btn-large">Claim the stack →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BONUS STACK ─── -->
+<section class="bonuses">
+  <div class="container">
+    <div class="bonuses-header">
+      <span class="eyebrow">Bonus stack</span>
+      <h2>Five resources, free when you start your trial.</h2>
+      <p class="lead" style="margin-top:14px;">Each resource is co-branded with Chris — built by Vista Social, curated by Chris for his audience. Delivered to your inbox the moment your trial starts.</p>
+      <div class="value-line">Total value: <strong>$1,940</strong></div>
+    </div>
+
+    <div class="bonuses-grid">
+      <div class="bonus">
+        <div class="bonus-cover cover-1" style="background: url('bonus/bonus-01-playbook.png') center/cover, linear-gradient(135deg, #0063E3, #8C52FF);">
+          <div class="bonus-cobrand">
+            <span class="ambassador">Chris</span>
+            <span class="vs">× Vista Social</span>
+          </div>
+          <span>The Vista Social Setup Playbook</span>
+        </div>
+        <h4>The Vista Social Setup Playbook</h4>
+        <p>Step-by-step setup of your accounts, channels, and posting cadence — the exact way Chris runs his.</p>
+        <div class="meta"><span>PDF · 18 pages</span><span class="value">$240 value</span></div>
+      </div>
+
+      <div class="bonus">
+        <div class="bonus-cover cover-2" style="background: url('bonus/bonus-02-ai-prompts.png') center/cover, linear-gradient(135deg, #8C52FF, #FF66C4);">
+          <div class="bonus-cobrand">
+            <span class="ambassador">Chris</span>
+            <span class="vs">× Vista Social</span>
+          </div>
+          <span>50 AI Prompts for Social Content</span>
+        </div>
+        <h4>50 AI Prompts for Social Content</h4>
+        <p>The prompt pack that powers Chris's caption library — copy/paste-ready for the Vista Social AI assistant.</p>
+        <div class="meta"><span>PDF + Notion</span><span class="value">$190 value</span></div>
+      </div>
+
+      <div class="bonus">
+        <div class="bonus-cover cover-3" style="background: url('bonus/bonus-03-calendar.png') center/cover, linear-gradient(135deg, #FF66C4, #FFA0DA);">
+          <div class="bonus-cobrand">
+            <span class="ambassador">Chris</span>
+            <span class="vs">× Vista Social</span>
+          </div>
+          <span>The 12-Month Content Calendar</span>
+        </div>
+        <h4>12-Month Content Calendar Template</h4>
+        <p>Pre-built calendar with seasonal hooks, posting cadence, and pillar mapping. Drop your topics in and ship.</p>
+        <div class="meta"><span>Sheet + Notion</span><span class="value">$350 value</span></div>
+      </div>
+
+      <div class="bonus">
+        <div class="bonus-cover cover-4" style="background: url('bonus/bonus-04-audit.png') center/cover, linear-gradient(135deg, #3081E8, #0063E3);">
+          <div class="bonus-cobrand">
+            <span class="ambassador">Chris</span>
+            <span class="vs">× Vista Social</span>
+          </div>
+          <span>Social Media Audit Template</span>
+        </div>
+        <h4>Social Media Audit Template</h4>
+        <p>The audit framework Chris uses with new clients. Score any account in 20 minutes.</p>
+        <div class="meta"><span>Sheet · 60+ checks</span><span class="value">$280 value</span></div>
+      </div>
+
+      <div class="bonus">
+        <div class="bonus-cover cover-5" style="background: url('bonus/bonus-05-course.png') center/cover, linear-gradient(135deg, #B894FF, #8C52FF);">
+          <div class="bonus-cobrand">
+            <span class="ambassador">Chris</span>
+            <span class="vs">× Vista Social</span>
+          </div>
+          <span>Mini-Course: Social in 30 Days</span>
+        </div>
+        <h4>Mini-Course: Social Media in 30 Days</h4>
+        <p>5-part email course on building a content engine that runs without you. Written by Vista Social, intro'd by Chris.</p>
+        <div class="meta"><span>5 emails · drip</span><span class="value">$880 value</span></div>
+      </div>
+
+      <div class="bonus" style="background: linear-gradient(135deg, rgba(0,99,227,0.04), rgba(140,82,255,0.04), rgba(255,102,196,0.04)); border-color: var(--vs-purple-tint);">
+        <div class="bonus-cover" style="background: url('bonus/bonus-06-trends.png') center/cover, linear-gradient(135deg, #0A0F1F, #1F2547);">
+          <div class="bonus-cobrand">
+            <span class="ambassador">EXCLUSIVE</span>
+            <span class="vs">× Vista Social</span>
+          </div>
+          <span>The Quarterly Trends Report</span>
+        </div>
+        <h4>State of Social — Trends Report</h4>
+        <p>Vista Social's quarterly insights on platform shifts, algorithm changes, and what's actually working — gated for ambassador audiences.</p>
+        <div class="meta"><span>PDF · ~20 pages</span><span class="value">Subscriber-only</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY VISTA SOCIAL — light feature recap ─── -->
+<section>
+  <div class="container">
+    <div class="features-header">
+      <span class="eyebrow">What you're getting into</span>
+      <h2>One platform for every account, every channel, every client.</h2>
+      <p class="lead" style="margin-top:14px;">Vista Social is the social stack Chris recommends for B2B social teams — built for the way social actually works, not the way enterprise software wants it to.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">📅</div>
+        <h4>Schedule everywhere</h4>
+        <p>Instagram, TikTok, LinkedIn, Facebook, X, YouTube, Pinterest, Threads, Bluesky, Google Business — all from one calendar.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🤖</div>
+        <h4>AI assistant built-in</h4>
+        <p>Captions, hashtags, replies, content ideas — generated in your brand voice. No prompt engineering required.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💬</div>
+        <h4>One inbox for everything</h4>
+        <p>Comments, DMs, mentions across every platform. Assign to teammates, never miss a reply.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h4>Reports clients actually read</h4>
+        <p>White-labeled, branded, automated. The report that lands in their inbox looks like you built it.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">👥</div>
+        <h4>Built for teams &amp; agencies</h4>
+        <p>Approval workflows, client logins, profile permissions — at a flat per-account price, no per-seat tax.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎧</div>
+        <h4>Listen + respond, in one place</h4>
+        <p>Brand mentions, review monitoring, social listening — without bouncing between five tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+  <div class="container">
+    <span class="eyebrow">Ready when you are</span>
+    <h2>Start your 30-day trial.</h2>
+    <p>Full product. No feature gates. The bonus stack lands in your inbox the moment you start. Cancel anytime.</p>
+    <a href="https://vistasocial.com/signup?fp_ref=chris" class="btn btn-on-dark btn-large">Start trial →</a>
+    <p class="micro">Recommended by Chris Cunningham · 20% off year one applied automatically</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="https://vistasocial.com" class="footer-brand"><img src="../../media/assets/logo-horizontal-dark.png" alt="Vista Social" /></a>
+      <div class="footer-links">
+        <a href="https://vistasocial.com">Product</a>
+        <a href="https://vistasocial.com/pricing">Pricing</a>
+        <a href="https://vistasocial.com/ambassadors">Ambassador Program</a>
+        <a href="https://vistasocial.com/contact">Contact</a>
+      </div>
+    </div>
+    <div class="disclosure">
+      <strong>Disclosure:</strong> Chris Cunningham is a member of the Vista Social Ambassador Program and may earn a commission if you start a paid plan after using this page. The bonus stack and trial length are real and apply to anyone who signs up through this page — they don't cost you anything extra. Chris only recommends tools he uses himself.
+    </div>
+    <div class="copyright">
+      <span>© 2026 Vista Social. All rights reserved.</span>
+      <span><a href="https://vistasocial.com/privacy" style="color:inherit;">Privacy</a> · <a href="https://vistasocial.com/terms" style="color:inherit;">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

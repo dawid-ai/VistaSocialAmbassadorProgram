@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vista Social Ambassador Program — For the people moving social forward</title>
+<meta name="description" content="An ambassador program built around the access, intel, and recognition serious creators actually want — for educators, podcasters, and community leaders shaping how social media gets done." />
+<link rel="icon" href="../../media/assets/icon-logo-light.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vs-blue: #0063E3;
+    --vs-blue-hover: #0052C4;
+    --vs-purple: #8C52FF;
+    --vs-pink: #FF66C4;
+    --vs-blue-tint: #91BCF3;
+    --vs-purple-tint: #E2D4FF;
+    --vs-pink-tint: #FFD9F0;
+    --ink: #101010;
+    --ink-soft: #3A3A3A;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --surface: #FFFFFF;
+    --surface-alt: #F8F9FB;
+    --surface-dark: #0A0F1F;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--surface);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Layout ─── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  @media (min-width: 768px) { .container { padding: 0 48px; } }
+  section { padding: 96px 0; }
+  @media (max-width: 767px) { section { padding: 64px 0; } }
+
+  /* ─── Typography ─── */
+  h1, h2, h3, h4 { color: var(--ink); letter-spacing: -0.015em; line-height: 1.15; }
+  h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; }
+  h3 { font-size: 24px; font-weight: 700; line-height: 1.25; }
+  h4 { font-size: 18px; font-weight: 600; line-height: 1.3; }
+  p { color: var(--ink-soft); font-size: 16px; }
+  .lead { font-size: clamp(18px, 2vw, 20px); line-height: 1.55; color: var(--ink-soft); }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--vs-blue); margin-bottom: 20px; }
+  .muted { color: var(--muted); font-size: 13px; }
+
+  .grad {
+    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ─── Buttons ─── */
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none; cursor: pointer; transition: all 150ms ease; border: none; font-family: inherit; }
+  .btn-primary { background: var(--vs-blue); color: #fff; }
+  .btn-primary:hover { background: var(--vs-blue-hover); transform: translateY(-1px); box-shadow: 0 8px 16px rgba(0,99,227,0.25); }
+  .btn-secondary { background: transparent; color: var(--vs-blue); border: 1.5px solid var(--vs-blue); }
+  .btn-secondary:hover { background: rgba(0,99,227,0.06); }
+  .btn-on-dark { background: #fff; color: var(--vs-blue); }
+  .btn-on-dark:hover { background: #F0F6FF; }
+
+  /* ─── Nav ─── */
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(8px); border-bottom: 1px solid var(--border); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1320px; margin: 0 auto; }
+  .nav-logo img { height: 36px; display: block; }
+  .nav-links { display: none; gap: 32px; }
+  .nav-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; }
+  .nav-links a:hover { color: var(--vs-blue); }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  .nav-cta .btn { padding: 10px 20px; font-size: 14px; }
+  @media (min-width: 900px) { .nav-links { display: flex; } }
+
+  /* ─── Hero ─── */
+  .hero { position: relative; padding: 120px 0 96px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 1000px; height: 700px;
+    background: radial-gradient(ellipse at center, rgba(140,82,255,0.10) 0%, rgba(0,99,227,0.08) 30%, rgba(255,102,196,0.06) 60%, transparent 75%);
+    z-index: 0; pointer-events: none;
+  }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+  @media (min-width: 1000px) { .hero-grid { grid-template-columns: 1.3fr 1fr; gap: 64px; } }
+  .hero h1 { margin-bottom: 24px; }
+  .hero .lead { margin-bottom: 36px; max-width: 620px; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+  .hero-microcopy { font-size: 14px; color: var(--muted); }
+  .hero-microcopy strong { color: var(--ink); font-weight: 600; }
+
+  /* Quote card (Chris) */
+  .quote-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 28px;
+    box-shadow: 0 24px 48px rgba(16,16,16,0.06);
+    position: relative;
+  }
+  .quote-card::before {
+    content: ""; position: absolute; inset: -2px; border-radius: 22px;
+    background: linear-gradient(135deg, #0063E3, #8C52FF, #FF66C4);
+    z-index: -1; opacity: 0.15;
+  }
+  .quote-video {
+    aspect-ratio: 16/10; border-radius: 12px;
+    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    position: relative; overflow: hidden;
+  }
+  .play-btn { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
+  .play-btn::after { content: ""; width: 0; height: 0; border-left: 18px solid var(--vs-blue); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 4px; }
+  .quote-meta { display: flex; align-items: center; gap: 12px; }
+  .quote-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--vs-purple-tint); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--vs-purple); font-size: 16px; }
+  .quote-name { font-weight: 600; font-size: 15px; }
+  .quote-role { color: var(--muted); font-size: 13px; }
+
+  /* ─── Generic section ─── */
+  .section-header { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+  .section-header h2 { margin-bottom: 16px; }
+  .alt-bg { background: var(--surface-alt); }
+
+  /* ─── Intro section (single column) ─── */
+  .intro { max-width: 720px; margin: 0 auto; }
+  .intro h2 { margin-bottom: 24px; }
+  .intro p { font-size: 18px; line-height: 1.7; margin-bottom: 16px; }
+
+  /* ─── Audience grid ─── */
+  .audience-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1080px; margin: 0 auto; }
+  @media (min-width: 700px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .audience-grid { grid-template-columns: repeat(3, 1fr); } }
+  .aud-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: all 200ms ease; }
+  .aud-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(16,16,16,0.06); border-color: var(--vs-blue-tint); }
+  .aud-icon { width: 44px; height: 44px; border-radius: 12px; background: #F0F6FF; color: var(--vs-blue); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
+  .aud-card h4 { margin-bottom: 8px; }
+  .aud-card p { font-size: 14px; line-height: 1.55; }
+
+  .not-for { max-width: 720px; margin: 56px auto 0; padding: 24px 28px; background: #FFF8F2; border: 1px solid #FFE4D0; border-radius: 14px; }
+  .not-for h4 { color: #B45309; margin-bottom: 8px; font-size: 15px; }
+  .not-for p { font-size: 14px; color: var(--ink-soft); }
+
+  /* ─── Benefit pillars ─── */
+  .pillar { display: grid; grid-template-columns: 1fr; gap: 32px; padding: 48px 0; border-top: 1px solid var(--border); }
+  .pillar:first-of-type { border-top: none; }
+  @media (min-width: 900px) { .pillar { grid-template-columns: 280px 1fr; gap: 64px; align-items: start; } }
+  .pillar-label { display: flex; flex-direction: column; gap: 12px; }
+  .pillar-label .badge { display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; }
+  .pillar h3 { font-size: 22px; }
+  .pillar-list { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 700px) { .pillar-list { grid-template-columns: 1fr 1fr; gap: 16px 32px; } }
+  .pillar-item { display: flex; gap: 12px; align-items: flex-start; }
+  .pillar-item .check { flex: none; width: 22px; height: 22px; border-radius: 50%; background: #F0F6FF; color: var(--vs-blue); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+  .pillar-item p { font-size: 15px; line-height: 1.55; }
+  .pillar-item p strong { color: var(--ink); font-weight: 600; }
+
+  .badge-business { background: #F0F6FF; color: var(--vs-blue); }
+  .badge-audience { background: var(--vs-pink-tint); color: #C2185B; }
+  .badge-intel    { background: var(--vs-purple-tint); color: #5B21B6; }
+  .badge-craft    { background: #F0F6FF; color: var(--vs-blue); }
+  .badge-recog    { background: #FFF7E6; color: #B45309; }
+
+  /* Intel highlight callout */
+  .intel-callout { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(0,99,227,0.05), rgba(140,82,255,0.05), rgba(255,102,196,0.05)); border-left: 3px solid var(--vs-purple); border-radius: 8px; }
+  .intel-callout p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0; }
+
+  /* ─── Asks (what we ask of you) ─── */
+  .asks-grid { display: grid; grid-template-columns: 1fr; gap: 48px; max-width: 1000px; margin: 0 auto; }
+  @media (min-width: 800px) { .asks-grid { grid-template-columns: 320px 1fr; } }
+  .asks-intro h2 { margin-bottom: 16px; }
+  .asks-intro p { font-size: 15px; }
+  .asks-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .asks-list li { display: flex; gap: 14px; padding: 18px 20px; background: #fff; border: 1px solid var(--border); border-radius: 12px; }
+  .asks-list .num { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+  .asks-list strong { color: var(--ink); font-weight: 600; }
+  .asks-list p { font-size: 15px; margin: 0; }
+
+  /* ─── How to apply ─── */
+  .steps { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 1100px; margin: 0 auto; }
+  @media (min-width: 800px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+  .step { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 32px; position: relative; }
+  .step-num { font-size: 14px; font-weight: 700; color: var(--vs-blue); margin-bottom: 12px; letter-spacing: 0.06em; }
+  .step h3 { font-size: 20px; margin-bottom: 8px; }
+  .step p { font-size: 15px; }
+
+  /* ─── FAQ ─── */
+  .faq { max-width: 800px; margin: 0 auto; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-item:last-child { border-bottom: 1px solid var(--border); }
+  .faq-item details { padding: 22px 0; }
+  .faq-item summary { font-weight: 600; font-size: 17px; color: var(--ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 24px; font-weight: 400; color: var(--vs-blue); transition: transform 200ms ease; }
+  .faq-item details[open] summary::after { content: "−"; }
+  .faq-item details p { margin-top: 14px; font-size: 15px; line-height: 1.7; }
+
+  /* ─── Final CTA ─── */
+  .final-cta {
+    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
+    color: #fff; text-align: center; padding: 96px 0;
+  }
+  .final-cta h2 { color: #fff; margin-bottom: 20px; font-size: clamp(32px, 4.5vw, 48px); }
+  .final-cta p { color: rgba(255,255,255,0.92); font-size: 18px; max-width: 640px; margin: 0 auto 36px; }
+
+  /* ─── Footer ─── */
+  footer { background: var(--surface-dark); color: rgba(255,255,255,0.75); padding: 64px 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  @media (min-width: 700px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+  footer h5 { color: #fff; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  footer a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; }
+  footer a:hover { color: #fff; }
+  .footer-brand img { height: 32px; margin-bottom: 16px; }
+  .footer-brand p { color: rgba(255,255,255,0.65); font-size: 14px; max-width: 320px; line-height: 1.6; }
+  .footer-bottom { max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; color: rgba(255,255,255,0.5); }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="https://vistasocial.com" class="nav-logo"><img src="../../media/assets/logo-horizontal-light.png" alt="Vista Social" /></a>
+    <nav class="nav-links">
+      <a href="#">Features</a>
+      <a href="#">Solutions</a>
+      <a href="#">Integrations</a>
+      <a href="#">Pricing</a>
+      <a href="#">Resources</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-secondary" style="border:none; padding:10px 14px;">Log in</a>
+      <a href="#apply" class="btn btn-primary">Apply →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Vista Social Ambassador Program</span>
+        <h1>For the people <span class="grad">moving social forward</span>.</h1>
+        <p class="lead">An ambassador program built around the access, intel, and recognition serious creators actually want — for the educators, podcasters, and community leaders shaping how social media gets done.</p>
+        <div class="hero-ctas">
+          <a href="#apply" class="btn btn-primary">Apply to join →</a>
+          <a href="#what" class="btn btn-secondary">See what's inside</a>
+        </div>
+        <p class="hero-microcopy">First 25 accepted become <strong>Founding Ambassadors</strong> — locked-in rates and permanent recognition.</p>
+      </div>
+      <div class="quote-card">
+        <div class="quote-video">
+          <div class="play-btn"></div>
+        </div>
+        <div class="quote-meta">
+          <div class="quote-avatar">CC</div>
+          <div>
+            <div class="quote-name">Chris Cunningham</div>
+            <div class="quote-role">Ex-ClickUp · Founding Ambassador</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTRO / WHAT IT IS ─── -->
+<section id="what" class="alt-bg">
+  <div class="container">
+    <div class="intro">
+      <span class="eyebrow">What this is</span>
+      <h2>A program, not a payout.</h2>
+      <p>The Vista Social Ambassador Program is built for creators who already shape how their audience thinks about social media. You get the intel before anyone else sees it. You get real access to the team building Vista Social. You get rewarded properly for the partners and customers you bring in. And you get the kind of designation that sits well on your landing page, your podcast bio, and your speaker intro.</p>
+      <p>This is a separate track from our standard affiliate program. Different rates, different access, different conversation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO IT'S FOR ─── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Who it's for</span>
+      <h2>Built for creators, not coupon sites.</h2>
+      <p class="lead" style="margin-top:16px;">If you fit one of these, you're who we built this for.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="aud-card">
+        <div class="aud-icon">📚</div>
+        <h4>Marketing educators &amp; course creators</h4>
+        <p>Teaching social media, content strategy, or agency growth.</p>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">💬</div>
+        <h4>Community leaders</h4>
+        <p>Running engaged Slacks, Discords, or Facebook groups (1K+ active members).</p>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">🎙️</div>
+        <h4>Podcasters &amp; YouTubers</h4>
+        <p>In the marketing, SMB, agency, or creator-economy space — any audience size if the work is real.</p>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">🎤</div>
+        <h4>Authors, speakers, consultants</h4>
+        <p>With a real social presence and a stage.</p>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">🏢</div>
+        <h4>In-house social leads</h4>
+        <p>At recognizable brands who teach or speak publicly.</p>
+      </div>
+      <div class="aud-card" style="background: linear-gradient(135deg, #F0F6FF, #F6F1FF, #FFF1FA); border-color: transparent;">
+        <div class="aud-icon" style="background: rgba(255,255,255,0.7);">✨</div>
+        <h4>The common thread</h4>
+        <p>You actively produce real content for an audience that trusts you. Not famous required — just real.</p>
+      </div>
+    </div>
+    <div class="not-for">
+      <h4>This is not for</h4>
+      <p>Coupon and deal sites · generic affiliate marketers · anyone whose primary tactic is paid search on Vista Social brand keywords · black-hat plays (fake reviews, incentivized review farms, coupon farms).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BENEFITS (5 pillars) ─── -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">What you get</span>
+      <h2>Built around <span class="grad">five things</span> you actually need.</h2>
+    </div>
+
+    <!-- BUSINESS -->
+    <div class="pillar">
+      <div class="pillar-label">
+        <span class="badge badge-business">For your business</span>
+        <h3>Revenue + growth</h3>
+      </div>
+      <div class="pillar-list">
+        <div class="pillar-item"><span class="check">✓</span><p><strong>30% revenue share for 12 months</strong> on everything your referrals spend — base, upgrades, add-ons. (Standard affiliate is 20%.)</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Community First option</strong> — redirect part or all of your commission into a deeper discount for your audience. Activate 100+ this way and unlock the Community First designation.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Concierge onboarding</strong> for anyone you refer — they skip the line and get a real human walking them through setup.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Bring someone in</strong> — sponsor up to 2 new ambassadors per year. Earn a 5% override on their commissions for 12 months. We pay it; doesn't reduce theirs.</p></div>
+      </div>
+    </div>
+
+    <!-- AUDIENCE -->
+    <div class="pillar">
+      <div class="pillar-label">
+        <span class="badge badge-audience">For your audience</span>
+        <h3>Things you can give away</h3>
+      </div>
+      <div class="pillar-list">
+        <div class="pillar-item"><span class="check">✓</span><p><strong>20% off year one</strong> for anyone who signs up through you (or whatever you reallocate to).</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Extended free trial</strong> for your community.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Co-branded templates &amp; lead magnets</strong> — content calendars, audit checklists, AI prompt packs you can hand out under a co-branded format.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>White-labeled workshop kits</strong> — slides and scripts so you can run "Social Media for [your audience]" sessions under your own brand.</p></div>
+      </div>
+    </div>
+
+    <!-- INTEL (the bragging right) -->
+    <div class="pillar">
+      <div class="pillar-label">
+        <span class="badge badge-intel">Intel &amp; insider knowledge</span>
+        <h3>The bragging right</h3>
+      </div>
+      <div class="pillar-list">
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Monthly Trends Brief</strong> — algorithm shifts, format trends, what's working right now. Sent to ambassadors before any of it goes public.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Quarterly State of Social report</strong> — drawn from anonymized aggregate data across thousands of Vista Social accounts. Real numbers nobody else has.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Algorithm change alerts</strong> — same-day breakdowns when LinkedIn, Instagram, TikTok, or any platform shifts ranking.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Viral teardowns</strong> — short briefs on what's blowing up and why.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Private webinars</strong> with our data team and outside guest experts.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Co-author credit</strong> on the State of Social report when your field intel feeds in.</p></div>
+      </div>
+      <div class="intel-callout" style="grid-column: 1 / -1;">
+        <p><strong>Why this matters:</strong> The intel is yours to share with your audience — under your byline, with attribution to Vista Social. Being an ambassador means being a source.</p>
+      </div>
+    </div>
+
+    <!-- CRAFT -->
+    <div class="pillar">
+      <div class="pillar-label">
+        <span class="badge badge-craft">For your craft</span>
+        <h3>Access + reputation</h3>
+      </div>
+      <div class="pillar-list">
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Priority access</strong> to every beta and unreleased feature before anyone else.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Quarterly 1:1</strong> with Vista Social's performance marketer — 60 minutes, every quarter, on whatever you want to talk about.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Working access</strong> to our social media managers and support team for tactical questions.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Speaking slots</strong> on Vista Social webinars, virtual summits, and in-person events.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Content collabs</strong> — co-authored posts, interviews, sneak-peek demos, podcast guest spots.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Guest posting</strong> on the Vista Social blog.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>10–100% off your own Vista Social plan</strong> — set during onboarding.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>A direct line to a real human</strong> on the Vista Social team. Not a queue.</p></div>
+      </div>
+    </div>
+
+    <!-- RECOGNITION -->
+    <div class="pillar">
+      <div class="pillar-label">
+        <span class="badge badge-recog">Recognition</span>
+        <h3>Bragging rights, properly</h3>
+      </div>
+      <div class="pillar-list">
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Verified Ambassador badge</strong> on your public Vista Social profile and shareable reports.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Tier system</strong> with physical recognition awards at tenure and contribution milestones.</p></div>
+        <div class="pillar-item"><span class="check">✓</span><p><strong>Founding Ambassador</strong> designation for the first 25 — locked-in rates and permanent recognition in the program's history.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT WE ASK ─── -->
+<section>
+  <div class="container">
+    <div class="asks-grid">
+      <div class="asks-intro">
+        <span class="eyebrow">What we ask</span>
+        <h2>A real partnership cuts both ways.</h2>
+        <p>This isn't a list to get on and forget. Ambassadors who go quiet are removed at the annual review. The shortlist stays short on purpose — that's what makes being on it mean something.</p>
+      </div>
+      <ul class="asks-list">
+        <li><span class="num">1</span><p><strong>One piece of authentic content per quarter</strong> in your format — review, tutorial, case study, podcast mention, newsletter, video.</p></li>
+        <li><span class="num">2</span><p><strong>Field intel back to us</strong> — respond to occasional pulse surveys, share what you're seeing. Your input goes into the reports you also receive.</p></li>
+        <li><span class="num">3</span><p><strong>FTC disclosure</strong> on anything promotional. Standard practice.</p></li>
+        <li><span class="num">4</span><p><strong>Annual review</strong> with teeth, not a formality. Inactive ambassadors are removed. Re-application allowed.</p></li>
+        <li><span class="num">5</span><p><strong>No black-hat plays</strong> — no brand bidding on Vista Social keywords, no fake reviews, no coupon-farm distribution.</p></li>
+        <li><span class="num">6</span><p><strong>Be a real Vista Social user.</strong> You can't promote something you don't use. We'll know, and so will your audience.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW TO APPLY ─── -->
+<section id="apply" class="alt-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">How to apply</span>
+      <h2>Three steps. About a week, end to end.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">STEP 01</div>
+        <h3>Apply</h3>
+        <p>Fill out the form. We'll ask about your work, your audience, and how you'd want to use the program. The more specific the better.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 02</div>
+        <h3>30-minute call</h3>
+        <p>If your application clears the bar, we'll set up a call with Dawid, who runs the program. We'll walk through the details and figure out the right setup for you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 03</div>
+        <h3>Welcome kit</h3>
+        <p>Ambassador dashboard, co-branded assets, intro to our performance marketer, plan discount applied, badge turned on.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="#" class="btn btn-primary">Start your application →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item"><details><summary>How is this different from your affiliate program?</summary><p>The affiliate program is open to anyone, pays 20%, and runs through self-service signup. The Ambassador Program is application-based, pays 30% for 12 months, and includes intel, beta access, team access, content collabs, and program support you don't get as an affiliate.</p></details></div>
+      <div class="faq-item"><details><summary>Can I be both an affiliate and an ambassador?</summary><p>Yes. But commissions don't stack on the same referral.</p></details></div>
+      <div class="faq-item"><details><summary>Can I bring someone else into the program?</summary><p>Once you've been active for a bit, yes — up to two sponsored applications per year. You vouch for them, they skip the review queue, and you earn a 5% override on their commissions for 12 months.</p></details></div>
+      <div class="faq-item"><details><summary>How long does the review take?</summary><p>Usually under a week from application to call. Sometimes faster.</p></details></div>
+      <div class="faq-item"><details><summary>What happens if I'm not accepted?</summary><p>We'll tell you why. In most cases it's a fit issue, not a quality issue — the affiliate program may be the right home, and we'll point you there.</p></details></div>
+      <div class="faq-item"><details><summary>Can I leave the program?</summary><p>Anytime, with 30 days' notice. Commissions on existing referrals continue through their 12-month window.</p></details></div>
+      <div class="faq-item"><details><summary>Can I be removed from the program?</summary><p>Yes. Ambassadors who go inactive are removed at the annual review. We also remove anyone using black-hat tactics or misrepresenting the product. We'd rather have 50 active ambassadors than 500 dormant ones.</p></details></div>
+      <div class="faq-item"><details><summary>Are commissions stackable with the discount on my own plan?</summary><p>Yes — your plan discount and your referral commissions are separate.</p></details></div>
+      <div class="faq-item"><details><summary>What counts as "one piece of content per quarter"?</summary><p>Anything authentic in your native format. A YouTube video, a podcast mention, a newsletter feature, a tutorial post, a case study, a livestream demo. We're not counting words — we're looking for genuine work.</p></details></div>
+      <div class="faq-item"><details><summary>Do I need to use Vista Social to apply?</summary><p>You need to be using it (or actively onboarding) by the time you're accepted. We don't accept partners who promote products they haven't worked with.</p></details></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready when you are.</h2>
+    <p>First 25 accepted become Founding Ambassadors — rates locked in for as long as you're active, plus permanent recognition in the program. After that, the program stays open, but Founding status doesn't.</p>
+    <a href="#apply" class="btn btn-on-dark">Apply now →</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="../../media/assets/logo-horizontal-dark.png" alt="Vista Social" />
+      <p>Manage every social account, every client, every campaign — all from one platform built for the way social actually works.</p>
+    </div>
+    <div>
+      <h5>Product</h5>
+      <ul>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Integrations</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Changelog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Customers</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Partners</h5>
+      <ul>
+        <li><a href="#">Affiliate Program</a></li>
+        <li><a href="#">Ambassador Program</a></li>
+        <li><a href="#">Agency Partners</a></li>
+        <li><a href="#">Press kit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Vista Social. All rights reserved.</span>
+    <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
