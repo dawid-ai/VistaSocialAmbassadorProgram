@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vista Social MCP — Carousel Example</title>
+  <meta name="description" content="Example LinkedIn carousel built with the /vista-carousel skill — Vista Social MCP." />
+  <link rel="icon" href="../../media/assets/icon-logo-light.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --vista-blue: #0063E3;
+      --vista-purple: #8C52FF;
+      --vista-pink: #FF66C4;
+      --ink: #0F1530;
+      --ink-soft: #4A5174;
+      --line: #E5E8F2;
+      --bg: #F8F9FC;
+      --grad: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      color: var(--ink);
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 48px;
+      border-bottom: 1px solid var(--line);
+      background: #FFFFFF;
+    }
+    nav .brand img { height: 28px; display: block; }
+    nav .right { font-size: 14px; color: var(--ink-soft); font-weight: 500; }
+    nav .right a { color: var(--vista-blue); font-weight: 600; }
+    .hero {
+      padding: 80px 48px 48px;
+      text-align: center;
+      max-width: 920px; margin: 0 auto;
+    }
+    .hero .kicker {
+      display: inline-block;
+      font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 700;
+      color: var(--vista-blue);
+      padding: 6px 14px; border-radius: 999px;
+      background: rgba(0,99,227,0.08);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.05; font-weight: 800; letter-spacing: -0.02em;
+      margin: 0 0 20px;
+    }
+    h1 .grad {
+      background: var(--grad);
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+    }
+    .hero p { font-size: 19px; color: var(--ink-soft); max-width: 680px; margin: 0 auto; }
+    .actions { display: flex; gap: 12px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 10px;
+      font-weight: 600; font-size: 14px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn-primary { background: var(--vista-blue); color: #FFFFFF; }
+    .btn-primary:hover { background: #0050BB; }
+    .btn-ghost { background: var(--bg); color: var(--ink); border: 1px solid var(--line); }
+    .btn-ghost:hover { background: #EFF2F8; }
+
+    .section { max-width: 1080px; margin: 0 auto; padding: 32px 48px 64px; }
+    .section h2 { font-size: 22px; font-weight: 700; margin: 0 0 20px; letter-spacing: -0.01em; }
+
+    .slides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 900px) { .slides { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .slides { grid-template-columns: 1fr; } }
+    .slide {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .slide:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(15,21,48,0.08); }
+    .slide img { width: 100%; height: auto; display: block; }
+    .slide .cap {
+      padding: 10px 14px;
+      font-size: 12px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0.3px;
+      border-top: 1px solid var(--line);
+    }
+
+    .post {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px;
+      white-space: pre-wrap;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+    .post-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .post-header h2 { margin: 0; }
+    .copy-btn {
+      padding: 8px 14px; border-radius: 8px;
+      background: #FFFFFF; border: 1px solid var(--line);
+      font-size: 13px; font-weight: 600; cursor: pointer; color: var(--ink);
+      font-family: inherit;
+    }
+    .copy-btn:hover { background: var(--bg); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 48px;
+      font-size: 13px; color: var(--ink-soft);
+      text-align: center;
+    }
+    footer strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../../" class="brand"><img src="../../media/assets/logo-horizontal-light.png" alt="Vista Social" /></a>
+    <div class="right"><a href="../../">← Back to preview index</a></div>
+  </nav>
+
+  <section class="hero">
+    <span class="kicker">04 — Carousel example</span>
+    <h1>Vista Social <span class="grad">MCP</span> — carousel deck</h1>
+    <p>A LinkedIn document post built with the <code>/vista-carousel</code> skill. Nine 1024×1024 slides plus a merged PDF for upload — the same pipeline ambassadors can use to spin up Vista-branded decks for their own audiences.</p>
+    <div class="actions">
+      <a href="vista-social-mcp.pdf" class="btn btn-primary" download>↓ Download PDF</a>
+      <a href="#post" class="btn btn-ghost">View LinkedIn copy</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Slides</h2>
+    <div class="slides">
+      <div class="slide"><img src="01-cover.png" alt="Slide 1 — cover" loading="lazy" /><div class="cap">01 — Cover</div></div>
+      <div class="slide"><img src="02-before.png" alt="Slide 2 — the before state" loading="lazy" /><div class="cap">02 — Before</div></div>
+      <div class="slide"><img src="03-stat-tools.png" alt="Slide 3 — 50+ tools stat" loading="lazy" /><div class="cap">03 — Tools stat</div></div>
+      <div class="slide"><img src="04-use-cases.png" alt="Slide 4 — use cases" loading="lazy" /><div class="cap">04 — Use cases</div></div>
+      <div class="slide"><img src="05-quote.png" alt="Slide 5 — quote" loading="lazy" /><div class="cap">05 — Quote</div></div>
+      <div class="slide"><img src="06-compare.png" alt="Slide 6 — comparison" loading="lazy" /><div class="cap">06 — Compare</div></div>
+      <div class="slide"><img src="07-stat-setup.png" alt="Slide 7 — 2-minute setup stat" loading="lazy" /><div class="cap">07 — Setup stat</div></div>
+      <div class="slide"><img src="08-comp-gap.png" alt="Slide 8 — competitive gap" loading="lazy" /><div class="cap">08 — Gap</div></div>
+      <div class="slide"><img src="09-cta.png" alt="Slide 9 — call to action" loading="lazy" /><div class="cap">09 — CTA</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="post">
+    <div class="post-header">
+      <h2>LinkedIn post copy</h2>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('post-body').innerText); this.textContent='Copied'; setTimeout(()=>this.textContent='Copy',1600);">Copy</button>
+    </div>
+    <div class="post" id="post-body">Your AI assistant just got hands.
+
+For two years, AI tools could only advise you. You'd get a caption suggestion, switch tabs, paste it, schedule it yourself. The "work" never actually got done by the AI.
+
+That changes when you plug Vista Social into Claude or ChatGPT. With MCP turned on, your AI client gets 50+ tools — publishing, analytics, inbox, reporting, teams — and does the work inside your Vista Social account.
+
+A few real prompts from our docs:
+
+→ "Review today's inbox across all profiles. Complaints first."
+→ "Schedule 5 posts next week: 2 product, 2 customer, 1 BTS. Spread Mon–Fri."
+→ "Benchmark our Instagram and TikTok vs industry. Tell me 3 gaps."
+
+Setup is about two minutes: copy your MCP URL from Settings → Integrations, paste it into Claude or ChatGPT once, done.
+
+Try it free — link in comments.</div>
+  </section>
+
+  <footer>
+    Built with the <strong>/vista-carousel</strong> skill — 9 slides + merged PDF + LinkedIn copy, generated from a single data file.
+  </footer>
+</body>
+</html>
