@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vista Social//State of Social Q3 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:youtube-reporting-audit-20261012@vistasocial.com
+DTSTAMP:20261005T000000Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:Audit Q4 reporting for YouTube's view-definition break
+DESCRIPTION:YouTube began counting a view from the first frame on 24 August. Annotate the break and retain engaged views for continuity.
+URL:https://blog.youtube/inside-youtube/engaged-views-youtube-explained/
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-ai-act-grace-20261202@vistasocial.com
+DTSTAMP:20261005T000000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:EU AI Act Article 50 limited grace date
+DESCRIPTION:Review marking and detection obligations for qualifying older systems with counsel.
+URL:https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act
+END:VEVENT
+BEGIN:VEVENT
+UID:youtube-shorts-threshold-20270201@vistasocial.com
+DTSTAMP:20261005T000000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:YouTube Shorts revenue threshold changes
+DESCRIPTION:Shorts ad and subscription revenue sharing requires 10 million qualified Shorts views in the prior 90 days. Channels below the threshold can remain in YPP and earn on long-form work.
+URL:https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/
+END:VEVENT
+END:VCALENDAR
