@@ -1,268 +1,226 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vista Social Ambassador Program — For the people moving social forward</title>
-<meta name="description" content="An ambassador program built around the access, intel, and recognition serious creators actually want — for educators, podcasters, and community leaders shaping how social media gets done." />
-<link rel="icon" href="../../media/assets/icon-logo-light.png" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vista Social Ambassador Program - For the people moving social forward</title>
+<meta name="description" content="Lifetime commission, paid every 30 days. An application-only ambassador program for the educators, podcasters, and community leaders shaping how social media gets done.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --vs-blue: #0063E3;
-    --vs-blue-hover: #0052C4;
-    --vs-purple: #8C52FF;
-    --vs-pink: #FF66C4;
-    --vs-blue-tint: #91BCF3;
-    --vs-purple-tint: #E2D4FF;
-    --vs-pink-tint: #FFD9F0;
-    --ink: #101010;
-    --ink-soft: #3A3A3A;
-    --muted: #6B7280;
-    --border: #E5E7EB;
-    --surface: #FFFFFF;
-    --surface-alt: #F8F9FB;
-    --surface-dark: #0A0F1F;
-  }
+:root{
+  --vs-blue:#0063E3; --vs-blue-deep:#0B60DA; --vs-blue-bright:#2482FD;
+  --vs-purple:#8C52FF; --vs-magenta:#D15EDC;
+  --navy:#002E69; --ink:#18191F; --muted:#6D7C8F; --muted-dark:#B3B9C5;
+  --line:#E5E7EB; --line-dark:rgba(255,255,255,.12);
+  --tint-blue:#EAF3FF; --tint-blue-2:#E9F1FD;
+  --surface:#FFFFFF; --surface-alt:#F8F9FB; --surface-dark:#0A0A0A; --surface-black:#000;
+  --wrap:1200px; --wrap-wide:1320px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:400;color:var(--navy);background:var(--surface);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{color:var(--ink);margin:0 0 16px;letter-spacing:-.02em;line-height:1.14;font-weight:600;}
+h1{font-size:clamp(38px,5.2vw,64px);}
+h2{font-size:clamp(30px,3.6vw,44px);letter-spacing:-.015em;}
+h3{font-size:clamp(19px,1.5vw,22px);}
+p{margin:0 0 18px;}
+a{color:var(--vs-blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+:focus-visible{outline:3px solid var(--vs-magenta);outline-offset:3px;}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;}
+.wrap-wide{max-width:var(--wrap-wide);margin:0 auto;padding:0 24px;}
+section{padding:96px 0;}
+.grad{background:linear-gradient(90deg,#1A6DFF 0%,#2F7CFF 34%,#6AA9FF 44%,#D15EDC 50%,#8C52FF 56%,#6AA9FF 63%,#1A6DFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.grad-d{background:linear-gradient(90deg,#6AA9FF 0%,#8FC0FF 34%,#C8A6FF 46%,#F0A6F5 50%,#C8A6FF 56%,#8FC0FF 66%,#6AA9FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--ink);
-    background: var(--surface);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+.dark{background:var(--surface-dark);color:var(--muted-dark);position:relative;overflow:hidden;}
+.dark h1,.dark h2,.dark h3{color:#fff;}
+.dark::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(60% 50% at 8% 0%,rgba(0,99,227,.22),transparent 70%),
+  radial-gradient(50% 45% at 96% 30%,rgba(140,82,255,.18),transparent 72%);}
+.dark > *{position:relative;z-index:1;}
 
-  /* ─── Layout ─── */
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  @media (min-width: 768px) { .container { padding: 0 48px; } }
-  section { padding: 96px 0; }
-  @media (max-width: 767px) { section { padding: 64px 0; } }
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-dark);}
+.nav-in{display:flex;align-items:center;gap:32px;height:68px;}
+.nav svg{height:26px;width:auto;display:block;}
+.nav-links{display:flex;gap:26px;margin-left:8px;}
+.nav-links a{color:rgba(255,255,255,.76);font-size:15px;}
+.nav-links a:hover{color:#fff;text-decoration:none;}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:16px;}
+.nav-right .login{color:rgba(255,255,255,.76);font-size:15px;}
 
-  /* ─── Typography ─── */
-  h1, h2, h3, h4 { color: var(--ink); letter-spacing: -0.015em; line-height: 1.15; }
-  h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
-  h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; }
-  h3 { font-size: 24px; font-weight: 700; line-height: 1.25; }
-  h4 { font-size: 18px; font-weight: 600; line-height: 1.3; }
-  p { color: var(--ink-soft); font-size: 16px; }
-  .lead { font-size: clamp(18px, 2vw, 20px); line-height: 1.55; color: var(--ink-soft); }
-  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--vs-blue); margin-bottom: 20px; }
-  .muted { color: var(--muted); font-size: 13px; }
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;font-size:14px;font-weight:500;background:var(--tint-blue);color:var(--vs-blue);}
+.chip-d{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.14);}
+.chip-dot{font-size:11px;line-height:1;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:9999px;font-weight:500;font-size:16px;font-family:inherit;cursor:pointer;border:1px solid transparent;transition:all 160ms ease;}
+.btn:hover{text-decoration:none;}
+.btn-primary{background:var(--vs-blue);color:#fff;}
+.btn-primary:hover{background:var(--vs-blue-deep);}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.28);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.btn-light{background:#fff;color:var(--ink);border-color:var(--line);}
+.btn-light:hover{background:var(--surface-alt);}
 
-  .grad {
-    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+.hero{padding:88px 0 76px;}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+.hero .lead{font-size:19px;color:var(--muted-dark);max-width:33em;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 26px;}
+.trust{display:flex;flex-wrap:wrap;gap:12px;}
+.trust span{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#fff;background:rgba(255,255,255,.06);border:1px solid var(--line-dark);border-radius:9999px;padding:8px 16px;}
+.trust b{font-weight:600;}
+.note{font-size:13.5px;color:var(--muted-dark);margin-top:22px;max-width:34em;}
+.note b{color:#fff;font-weight:600;}
+.media{border-radius:24px;border:1px solid var(--line-dark);background:rgba(255,255,255,.04);padding:14px;}
+.media-inner{aspect-ratio:16/10;border-radius:16px;background:linear-gradient(135deg,#0B60DA,#8C52FF 60%,#D15EDC);display:flex;align-items:center;justify-content:center;}
+.play{width:62px;height:62px;border-radius:9999px;background:#fff;display:flex;align-items:center;justify-content:center;}
+.play::after{content:"";border-left:17px solid var(--vs-blue);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px;}
+.byline{display:flex;align-items:center;gap:12px;padding:16px 8px 6px;}
+.avatar{width:42px;height:42px;border-radius:9999px;background:linear-gradient(135deg,#0063E3,#8C52FF);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;}
+.byline .n{color:#fff;font-weight:500;font-size:15px;line-height:1.3;}
+.byline .r{color:var(--muted-dark);font-size:13px;}
 
-  /* ─── Buttons ─── */
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none; cursor: pointer; transition: all 150ms ease; border: none; font-family: inherit; }
-  .btn-primary { background: var(--vs-blue); color: #fff; }
-  .btn-primary:hover { background: var(--vs-blue-hover); transform: translateY(-1px); box-shadow: 0 8px 16px rgba(0,99,227,0.25); }
-  .btn-secondary { background: transparent; color: var(--vs-blue); border: 1.5px solid var(--vs-blue); }
-  .btn-secondary:hover { background: rgba(0,99,227,0.06); }
-  .btn-on-dark { background: #fff; color: var(--vs-blue); }
-  .btn-on-dark:hover { background: #F0F6FF; }
+.eyebrow-wrap{margin-bottom:18px;}
+.section-head{max-width:46em;}
+.section-head.center{margin:0 auto;text-align:center;}
+.lede{font-size:18px;color:var(--muted);}
+.dark .lede{color:var(--muted-dark);}
+.grid{display:grid;gap:20px;}
+.g2{grid-template-columns:repeat(2,1fr);}
+.g3{grid-template-columns:repeat(3,1fr);}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;}
+.dark .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.10);}
+.card h3{margin-bottom:8px;}
+.card p{margin:0;font-size:15.5px;color:var(--muted);}
+.dark .card p{color:var(--muted-dark);}
+.card .ico{font-size:24px;margin-bottom:14px;display:block;}
 
-  /* ─── Nav ─── */
-  .nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(8px); border-bottom: 1px solid var(--border); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1320px; margin: 0 auto; }
-  .nav-logo img { height: 36px; display: block; }
-  .nav-links { display: none; gap: 32px; }
-  .nav-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; }
-  .nav-links a:hover { color: var(--vs-blue); }
-  .nav-cta { display: flex; align-items: center; gap: 12px; }
-  .nav-cta .btn { padding: 10px 20px; font-size: 14px; }
-  @media (min-width: 900px) { .nav-links { display: flex; } }
+.money{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.money .card{border-top:3px solid var(--vs-blue);}
+.money .big{font-size:32px;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.1;display:block;margin-bottom:6px;}
+.stack{margin-top:40px;background:var(--tint-blue);border-radius:20px;padding:34px;}
+.stack h3{margin-bottom:10px;}
+.stack p:last-child{margin-bottom:0;}
+.stack ol{margin:0 0 18px;padding-left:22px;color:var(--navy);}
+.stack li{margin-bottom:10px;font-size:16px;}
+.stack li:last-child{margin-bottom:0;}
 
-  /* ─── Hero ─── */
-  .hero { position: relative; padding: 120px 0 96px; overflow: hidden; }
-  .hero::before {
-    content: ""; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
-    width: 1000px; height: 700px;
-    background: radial-gradient(ellipse at center, rgba(140,82,255,0.10) 0%, rgba(0,99,227,0.08) 30%, rgba(255,102,196,0.06) 60%, transparent 75%);
-    z-index: 0; pointer-events: none;
-  }
-  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
-  @media (min-width: 1000px) { .hero-grid { grid-template-columns: 1.3fr 1fr; gap: 64px; } }
-  .hero h1 { margin-bottom: 24px; }
-  .hero .lead { margin-bottom: 36px; max-width: 620px; }
-  .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
-  .hero-microcopy { font-size: 14px; color: var(--muted); }
-  .hero-microcopy strong { color: var(--ink); font-weight: 600; }
+.tbl-wrap{overflow-x:auto;margin-top:36px;}
+table{border-collapse:collapse;width:100%;min-width:620px;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line);font-size:15.5px;vertical-align:top;}
+thead th{background:var(--tint-blue);color:var(--ink);font-weight:600;font-size:14px;}
+thead th:last-child{background:linear-gradient(90deg,rgba(0,99,227,.14),rgba(140,82,255,.14));}
+tbody tr:last-child td{border-bottom:none;}
+tbody td:last-child{background:rgba(0,99,227,.045);}
+td:first-child{font-weight:500;color:var(--ink);width:30%;}
+td.hl{font-weight:500;color:var(--ink);}
 
-  /* Quote card (Chris) */
-  .quote-card {
-    background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 28px;
-    box-shadow: 0 24px 48px rgba(16,16,16,0.06);
-    position: relative;
-  }
-  .quote-card::before {
-    content: ""; position: absolute; inset: -2px; border-radius: 22px;
-    background: linear-gradient(135deg, #0063E3, #8C52FF, #FF66C4);
-    z-index: -1; opacity: 0.15;
-  }
-  .quote-video {
-    aspect-ratio: 16/10; border-radius: 12px;
-    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
-    display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
-    position: relative; overflow: hidden;
-  }
-  .play-btn { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
-  .play-btn::after { content: ""; width: 0; height: 0; border-left: 18px solid var(--vs-blue); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 4px; }
-  .quote-meta { display: flex; align-items: center; gap: 12px; }
-  .quote-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--vs-purple-tint); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--vs-purple); font-size: 16px; }
-  .quote-name { font-weight: 600; font-size: 15px; }
-  .quote-role { color: var(--muted); font-size: 13px; }
+.bgroup{border:1px solid var(--line);border-radius:20px;padding:30px;background:#fff;}
+.bgroup .tag{font-size:13px;font-weight:600;color:var(--vs-blue);display:block;margin-bottom:6px;}
+.bgroup ul{list-style:none;margin:0;padding:0;}
+.bgroup li{position:relative;padding-left:28px;margin-bottom:14px;font-size:15.5px;color:var(--navy);}
+.bgroup li:last-child{margin-bottom:0;}
+.bgroup li::before{content:"";position:absolute;left:0;top:7px;width:17px;height:17px;border-radius:9999px;background:var(--tint-blue);}
+.bgroup li::after{content:"";position:absolute;left:5px;top:11px;width:7px;height:4px;border-left:2px solid var(--vs-blue);border-bottom:2px solid var(--vs-blue);transform:rotate(-45deg);}
+.bgroup .why{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted);}
 
-  /* ─── Generic section ─── */
-  .section-header { text-align: center; max-width: 720px; margin: 0 auto 64px; }
-  .section-header h2 { margin-bottom: 16px; }
-  .alt-bg { background: var(--surface-alt); }
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;}
+.step .num{font-size:13px;font-weight:600;color:var(--vs-blue);letter-spacing:.08em;display:block;margin-bottom:10px;}
+.asks{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:14px;}
+.asks li{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;font-size:15.5px;}
+.asks .n{flex:none;width:26px;height:26px;border-radius:9999px;background:var(--vs-blue);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;}
 
-  /* ─── Intro section (single column) ─── */
-  .intro { max-width: 720px; margin: 0 auto; }
-  .intro h2 { margin-bottom: 24px; }
-  .intro p { font-size: 18px; line-height: 1.7; margin-bottom: 16px; }
+details{border-bottom:1px solid var(--line);padding:20px 0;}
+details summary{cursor:pointer;font-weight:500;color:var(--ink);font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;}
+details summary::-webkit-details-marker{display:none;}
+details summary::after{content:"+";color:var(--vs-blue);font-size:22px;font-weight:400;line-height:1;}
+details[open] summary::after{content:"\2212";}
+details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
 
-  /* ─── Audience grid ─── */
-  .audience-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1080px; margin: 0 auto; }
-  @media (min-width: 700px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1000px) { .audience-grid { grid-template-columns: repeat(3, 1fr); } }
-  .aud-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: all 200ms ease; }
-  .aud-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(16,16,16,0.06); border-color: var(--vs-blue-tint); }
-  .aud-icon { width: 44px; height: 44px; border-radius: 12px; background: #F0F6FF; color: var(--vs-blue); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
-  .aud-card h4 { margin-bottom: 8px; }
-  .aud-card p { font-size: 14px; line-height: 1.55; }
+.final{text-align:center;}
+.foot{background:var(--surface-black);color:var(--muted-dark);padding:60px 0 40px;font-size:14.5px;}
+.foot svg{height:24px;width:auto;margin-bottom:18px;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;}
+.foot h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:12px;}
+.foot ul{list-style:none;margin:0;padding:0;}
+.foot li{margin-bottom:9px;}
+.foot a{color:var(--muted-dark);}
+.foot a:hover{color:#fff;}
+.foot-bottom{margin-top:44px;padding-top:22px;border-top:1px solid var(--line-dark);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:13.5px;}
 
-  .not-for { max-width: 720px; margin: 56px auto 0; padding: 24px 28px; background: #FFF8F2; border: 1px solid #FFE4D0; border-radius: 14px; }
-  .not-for h4 { color: #B45309; margin-bottom: 8px; font-size: 15px; }
-  .not-for p { font-size: 14px; color: var(--ink-soft); }
-
-  /* ─── Benefit pillars ─── */
-  .pillar { display: grid; grid-template-columns: 1fr; gap: 32px; padding: 48px 0; border-top: 1px solid var(--border); }
-  .pillar:first-of-type { border-top: none; }
-  @media (min-width: 900px) { .pillar { grid-template-columns: 280px 1fr; gap: 64px; align-items: start; } }
-  .pillar-label { display: flex; flex-direction: column; gap: 12px; }
-  .pillar-label .badge { display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; }
-  .pillar h3 { font-size: 22px; }
-  .pillar-list { display: grid; grid-template-columns: 1fr; gap: 14px; }
-  @media (min-width: 700px) { .pillar-list { grid-template-columns: 1fr 1fr; gap: 16px 32px; } }
-  .pillar-item { display: flex; gap: 12px; align-items: flex-start; }
-  .pillar-item .check { flex: none; width: 22px; height: 22px; border-radius: 50%; background: #F0F6FF; color: var(--vs-blue); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
-  .pillar-item p { font-size: 15px; line-height: 1.55; }
-  .pillar-item p strong { color: var(--ink); font-weight: 600; }
-
-  .badge-business { background: #F0F6FF; color: var(--vs-blue); }
-  .badge-audience { background: var(--vs-pink-tint); color: #C2185B; }
-  .badge-intel    { background: var(--vs-purple-tint); color: #5B21B6; }
-  .badge-craft    { background: #F0F6FF; color: var(--vs-blue); }
-  .badge-recog    { background: #FFF7E6; color: #B45309; }
-
-  /* Intel highlight callout */
-  .intel-callout { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(0,99,227,0.05), rgba(140,82,255,0.05), rgba(255,102,196,0.05)); border-left: 3px solid var(--vs-purple); border-radius: 8px; }
-  .intel-callout p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0; }
-
-  /* ─── Asks (what we ask of you) ─── */
-  .asks-grid { display: grid; grid-template-columns: 1fr; gap: 48px; max-width: 1000px; margin: 0 auto; }
-  @media (min-width: 800px) { .asks-grid { grid-template-columns: 320px 1fr; } }
-  .asks-intro h2 { margin-bottom: 16px; }
-  .asks-intro p { font-size: 15px; }
-  .asks-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-  .asks-list li { display: flex; gap: 14px; padding: 18px 20px; background: #fff; border: 1px solid var(--border); border-radius: 12px; }
-  .asks-list .num { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
-  .asks-list strong { color: var(--ink); font-weight: 600; }
-  .asks-list p { font-size: 15px; margin: 0; }
-
-  /* ─── How to apply ─── */
-  .steps { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 1100px; margin: 0 auto; }
-  @media (min-width: 800px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
-  .step { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 32px; position: relative; }
-  .step-num { font-size: 14px; font-weight: 700; color: var(--vs-blue); margin-bottom: 12px; letter-spacing: 0.06em; }
-  .step h3 { font-size: 20px; margin-bottom: 8px; }
-  .step p { font-size: 15px; }
-
-  /* ─── FAQ ─── */
-  .faq { max-width: 800px; margin: 0 auto; }
-  .faq-item { border-top: 1px solid var(--border); }
-  .faq-item:last-child { border-bottom: 1px solid var(--border); }
-  .faq-item details { padding: 22px 0; }
-  .faq-item summary { font-weight: 600; font-size: 17px; color: var(--ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: "+"; font-size: 24px; font-weight: 400; color: var(--vs-blue); transition: transform 200ms ease; }
-  .faq-item details[open] summary::after { content: "−"; }
-  .faq-item details p { margin-top: 14px; font-size: 15px; line-height: 1.7; }
-
-  /* ─── Final CTA ─── */
-  .final-cta {
-    background: linear-gradient(135deg, #0063E3 0%, #8C52FF 50%, #FF66C4 100%);
-    color: #fff; text-align: center; padding: 96px 0;
-  }
-  .final-cta h2 { color: #fff; margin-bottom: 20px; font-size: clamp(32px, 4.5vw, 48px); }
-  .final-cta p { color: rgba(255,255,255,0.92); font-size: 18px; max-width: 640px; margin: 0 auto 36px; }
-
-  /* ─── Footer ─── */
-  footer { background: var(--surface-dark); color: rgba(255,255,255,0.75); padding: 64px 0 32px; }
-  .footer-grid { display: grid; grid-template-columns: 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  @media (min-width: 700px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
-  footer h5 { color: #fff; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
-  footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  footer a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; }
-  footer a:hover { color: #fff; }
-  .footer-brand img { height: 32px; margin-bottom: 16px; }
-  .footer-brand p { color: rgba(255,255,255,0.65); font-size: 14px; max-width: 320px; line-height: 1.6; }
-  .footer-bottom { max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; color: rgba(255,255,255,0.5); }
+@media (max-width:900px){
+  section{padding:64px 0;}
+  .hero-grid,.g3,.g2,.money,.steps,.foot-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .hero{padding:56px 0 52px;}
+}
 </style>
 </head>
 <body>
 
-<!-- ─── NAV ─── -->
 <header class="nav">
-  <div class="nav-inner">
-    <a href="https://vistasocial.com" class="nav-logo"><img src="../../media/assets/logo-horizontal-light.png" alt="Vista Social" /></a>
+  <div class="wrap-wide nav-in">
+    <a href="https://vistasocial.com/" aria-label="Vista Social"><svg aria-hidden="true" focusable="false" width="177" height="41" viewBox="0 0 177 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M123.488 16.9292L122.734 19.0612C120.879 18.4546 119.501 18.1512 118.6 18.1512C117.491 18.1512 116.936 18.5672 116.936 19.3992C116.936 19.5379 116.953 19.6679 116.988 19.7892C117.023 19.8932 117.092 19.9886 117.196 20.0752C117.3 20.1619 117.395 20.2399 117.482 20.3092C117.586 20.3612 117.742 20.4306 117.95 20.5172C118.158 20.5866 118.323 20.6472 118.444 20.6992C118.583 20.7339 118.799 20.7946 119.094 20.8812C119.389 20.9679 119.623 21.0372 119.796 21.0892C121.321 21.5572 122.37 22.0426 122.942 22.5452C123.514 23.0479 123.8 23.8712 123.8 25.0152C123.8 26.1766 123.384 27.0866 122.552 27.7452C121.737 28.4039 120.593 28.7332 119.12 28.7332C117.196 28.7332 115.376 28.1699 113.66 27.0432L114.648 25.0152C116.208 25.9339 117.699 26.3932 119.12 26.3932C120.351 26.3932 120.966 25.9859 120.966 25.1712C120.966 24.9979 120.949 24.8419 120.914 24.7032C120.879 24.5646 120.81 24.4432 120.706 24.3392C120.602 24.2352 120.498 24.1486 120.394 24.0792C120.307 24.0099 120.151 23.9319 119.926 23.8452C119.701 23.7586 119.51 23.6979 119.354 23.6632C119.215 23.6112 118.964 23.5332 118.6 23.4292C118.253 23.3252 117.976 23.2386 117.768 23.1692C116.503 22.7706 115.584 22.3112 115.012 21.7912C114.457 21.2712 114.18 20.5519 114.18 19.6332C114.18 18.4372 114.553 17.5099 115.298 16.8512C116.061 16.1926 117.144 15.8632 118.548 15.8632C120.004 15.8632 121.651 16.2186 123.488 16.9292Z" fill="#0063E3"/>
+<path d="M131.764 15.9152C133.688 15.8979 135.213 16.4786 136.34 17.6572C137.484 18.8186 138.056 20.3959 138.056 22.3892C138.056 24.3306 137.484 25.8732 136.34 27.0172C135.213 28.1612 133.688 28.7332 131.764 28.7332C129.84 28.7332 128.314 28.1612 127.188 27.0172C126.061 25.8732 125.498 24.3306 125.498 22.3892C125.498 20.3959 126.061 18.8186 127.188 17.6572C128.332 16.4786 129.857 15.8979 131.764 15.9152ZM129.268 25.2752C129.874 25.9512 130.706 26.2892 131.764 26.2892C132.821 26.2892 133.653 25.9512 134.26 25.2752C134.866 24.5819 135.17 23.6199 135.17 22.3892C135.17 21.1066 134.866 20.1099 134.26 19.3992C133.653 18.6886 132.821 18.3332 131.764 18.3332C130.724 18.3332 129.9 18.6886 129.294 19.3992C128.687 20.1099 128.384 21.1066 128.384 22.3892C128.384 23.6199 128.678 24.5819 129.268 25.2752Z" fill="#0063E3"/>
+<path d="M150.037 25.0932L150.999 26.9132C150.132 27.5892 149.291 28.0659 148.477 28.3432C147.679 28.6032 146.717 28.7332 145.591 28.7332C143.875 28.7332 142.479 28.1612 141.405 27.0172C140.33 25.8732 139.793 24.3306 139.793 22.3892C139.793 20.3959 140.347 18.8186 141.457 17.6572C142.566 16.4786 144.031 15.8892 145.851 15.8892C147.567 15.8892 149.135 16.3139 150.557 17.1632L149.621 19.0872C148.494 18.5672 147.307 18.3072 146.059 18.3072C145.036 18.3072 144.213 18.6799 143.589 19.4252C142.982 20.1532 142.679 21.1412 142.679 22.3892C142.679 23.5852 142.973 24.5386 143.563 25.2492C144.169 25.9426 144.984 26.2892 146.007 26.2892C147.411 26.2892 148.754 25.8906 150.037 25.0932Z" fill="#0063E3"/>
+<path d="M153.374 13.7052C153.045 13.4279 152.88 13.0379 152.88 12.5352C152.88 12.0326 153.045 11.6426 153.374 11.3652C153.704 11.0879 154.111 10.9492 154.596 10.9492C155.082 10.9492 155.489 11.0879 155.818 11.3652C156.148 11.6426 156.312 12.0326 156.312 12.5352C156.312 13.0379 156.148 13.4279 155.818 13.7052C155.489 13.9652 155.082 14.0952 154.596 14.0952C154.111 14.0952 153.704 13.9652 153.374 13.7052ZM156.078 28.4992H153.14V16.1492H156.078V28.4992Z" fill="#0063E3"/>
+<path d="M167.81 28.4992V26.9652C167.134 27.5892 166.519 28.0399 165.964 28.3172C165.41 28.5946 164.664 28.7332 163.728 28.7332C162.272 28.7332 161.059 28.1959 160.088 27.1212C159.118 26.0466 158.632 24.4259 158.632 22.2592C158.632 18.0299 160.236 15.9152 163.442 15.9152C165.02 15.9152 166.476 16.4526 167.81 17.5272V16.1492H170.748V28.4992H167.81ZM167.81 24.4692V20.2312C166.736 19.0006 165.609 18.3852 164.43 18.3852C162.506 18.3852 161.544 19.6766 161.544 22.2592C161.544 23.6286 161.83 24.6426 162.402 25.3012C162.974 25.9599 163.711 26.2892 164.612 26.2892C165.306 26.2892 165.869 26.1592 166.302 25.8992C166.736 25.6219 167.238 25.1452 167.81 24.4692Z" fill="#0063E3"/>
+<path d="M176.972 28.4992H174.034V11.5992H176.972V28.4992Z" fill="#0063E3"/>
+<path d="M64.5284 28.4992H61.3304L56.2344 16.1232H59.1984L62.2924 23.5332C62.431 23.8626 62.639 24.5039 62.9164 25.4572C63.3324 24.2266 63.549 23.5852 63.5664 23.5332L66.7644 16.1232H69.7284L64.5284 28.4992Z" fill="white"/>
+<path d="M71.7696 13.7052C71.4402 13.4279 71.2756 13.0379 71.2756 12.5352C71.2756 12.0326 71.4402 11.6426 71.7696 11.3652C72.0989 11.0879 72.5062 10.9492 72.9916 10.9492C73.4769 10.9492 73.8842 11.0879 74.2136 11.3652C74.5429 11.6426 74.7076 12.0326 74.7076 12.5352C74.7076 13.0379 74.5429 13.4279 74.2136 13.7052C73.8842 13.9652 73.4769 14.0952 72.9916 14.0952C72.5062 14.0952 72.0989 13.9652 71.7696 13.7052ZM74.4736 28.4992H71.5356V16.1492H74.4736V28.4992Z" fill="white"/>
+<path d="M87.034 16.9292L86.28 19.0612C84.4254 18.4546 83.0473 18.1512 82.146 18.1512C81.0367 18.1512 80.482 18.5672 80.482 19.3992C80.482 19.5379 80.4994 19.6679 80.534 19.7892C80.5687 19.8932 80.638 19.9886 80.742 20.0752C80.846 20.1619 80.9414 20.2399 81.028 20.3092C81.132 20.3612 81.288 20.4306 81.496 20.5172C81.704 20.5866 81.8687 20.6472 81.99 20.6992C82.1287 20.7339 82.3454 20.7946 82.64 20.8812C82.9347 20.9679 83.1687 21.0372 83.342 21.0892C84.8674 21.5572 85.916 22.0426 86.488 22.5452C87.06 23.0479 87.346 23.8712 87.346 25.0152C87.346 26.1766 86.93 27.0866 86.098 27.7452C85.2833 28.4039 84.1394 28.7332 82.666 28.7332C80.742 28.7332 78.922 28.1699 77.206 27.0432L78.194 25.0152C79.754 25.9339 81.2447 26.3932 82.666 26.3932C83.8967 26.3932 84.512 25.9859 84.512 25.1712C84.512 24.9979 84.4947 24.8419 84.46 24.7032C84.4254 24.5646 84.356 24.4432 84.252 24.3392C84.148 24.2352 84.044 24.1486 83.94 24.0792C83.8534 24.0099 83.6974 23.9319 83.472 23.8452C83.2467 23.7586 83.056 23.6979 82.9 23.6632C82.7614 23.6112 82.51 23.5332 82.146 23.4292C81.7994 23.3252 81.522 23.2386 81.314 23.1692C80.0487 22.7706 79.13 22.3112 78.558 21.7912C78.0034 21.2712 77.726 20.5519 77.726 19.6332C77.726 18.4372 78.0987 17.5099 78.844 16.8512C79.6067 16.1926 80.69 15.8632 82.094 15.8632C83.55 15.8632 85.1967 16.2186 87.034 16.9292Z" fill="white"/>
+<path d="M97.083 25.9772L97.395 27.9532C96.3377 28.4039 95.2977 28.6292 94.275 28.6292C92.9057 28.6292 91.9177 28.2912 91.311 27.6152C90.7217 26.9392 90.427 25.8386 90.427 24.3132V18.5932H88.607V16.1232H90.427V13.1592H93.391V16.1232H96.823V18.5932H93.391V24.1832C93.391 24.9112 93.5297 25.4139 93.807 25.6912C94.1017 25.9512 94.6043 26.0812 95.315 26.0812C95.939 26.0812 96.5283 26.0466 97.083 25.9772Z" fill="white"/>
+<path d="M107.964 28.4992V26.9652C107.288 27.5892 106.673 28.0399 106.118 28.3172C105.564 28.5946 104.818 28.7332 103.882 28.7332C102.426 28.7332 101.213 28.1959 100.242 27.1212C99.2718 26.0466 98.7864 24.4259 98.7864 22.2592C98.7864 18.0299 100.39 15.9152 103.596 15.9152C105.174 15.9152 106.63 16.4526 107.964 17.5272V16.1492H110.902V28.4992H107.964ZM107.964 24.4692V20.2312C106.89 19.0006 105.763 18.3852 104.584 18.3852C102.66 18.3852 101.698 19.6766 101.698 22.2592C101.698 23.6286 101.984 24.6426 102.556 25.3012C103.128 25.9599 103.865 26.2892 104.766 26.2892C105.46 26.2892 106.023 26.1592 106.456 25.8992C106.89 25.6219 107.392 25.1452 107.964 24.4692Z" fill="white"/>
+<path d="M38.9684 26.8575C39.6375 24.8602 40 22.7225 40 20.5C40 9.4543 31.0457 0.5 20 0.5C9.32666 0.5 0.606073 8.8608 0.0302734 19.3904C0.384604 19.0246 0.735247 18.648 1.08062 18.2604C3.08349 16.0127 4.65899 14.4054 5.94899 13.3267C7.23273 12.2532 8.27032 11.6711 9.19667 11.532C10.1523 11.3886 10.9322 11.7234 11.6669 12.3308C12.3471 12.8932 13.0207 13.7167 13.7895 14.6565L13.9207 14.817C15.5815 16.8454 17.8013 19.4984 21.7493 21.8365C22.6696 22.3815 23.685 22.91 24.8103 23.4096C25.7339 22.9767 26.4607 22.5209 27.0532 22.0771C27.7311 21.5692 28.2408 21.0716 28.6763 20.6265C28.7458 20.5555 28.8141 20.485 28.8815 20.4156L28.8823 20.4147C29.228 20.0581 29.5487 19.7273 29.8754 19.4807C30.2822 19.1736 30.7236 18.9752 31.2855 18.9756C31.8316 18.976 32.4564 19.1646 33.2366 19.5516C35.7327 20.7894 37.9492 22.2441 39.7613 23.5961C39.5872 24.7167 39.3205 25.8066 38.9684 26.8575Z" fill="#0063E3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.2585 40.4984C20.1725 40.4995 20.0863 40.5 20 40.5L20.2585 40.4984ZM20.2585 40.4984C20.2337 40.4987 20.2089 40.4989 20.1841 40.4992C20.1229 40.4997 20.0614 40.5 20 40.5" fill="#0063E3"/>
+<path d="M19.8154 40.4992C19.8767 40.4997 19.9381 40.5 19.9995 40.5C20.061 40.5 20.1223 40.4997 20.1836 40.4992H19.8154Z" fill="#EAF3FF"/>
+<path d="M38.9679 26.8575C39.32 25.8065 39.5872 24.7167 39.7613 23.5961C37.9492 22.2441 35.7327 20.7894 33.2366 19.5516C32.4564 19.1646 31.8316 18.976 31.2854 18.9756C30.7236 18.9752 30.2822 19.1736 29.8754 19.4807C29.5487 19.7273 29.2281 20.0581 28.8824 20.4146L28.8815 20.4156C28.8141 20.485 28.7458 20.5555 28.6763 20.6265C28.2408 21.0716 27.7311 21.5692 27.0532 22.0771C26.4607 22.5209 25.7338 22.9768 24.81 23.4097C28.3138 24.9653 32.8833 26.2401 38.9679 26.8575Z" fill="#EAF3FF"/>
+<path d="M19.8159 40.4992C8.85498 40.4003 0 31.4843 0 20.5C0 20.1277 0.0101749 19.7577 0.0302618 19.3904C0.384592 19.0246 0.735235 18.648 1.08061 18.2604C3.08348 16.0127 4.65898 14.4054 5.94897 13.3267C7.23272 12.2532 8.2703 11.6711 9.19666 11.532C10.1523 11.3886 10.9322 11.7234 11.6669 12.3308C12.3471 12.8932 13.0207 13.7167 13.7895 14.6565L13.9207 14.817C15.5814 16.8454 17.8013 19.4984 21.7493 21.8365C25.5351 24.0785 30.9294 26.0418 38.9684 26.8575C36.3305 34.7313 28.9273 40.4203 20.1841 40.4992H19.8159Z" fill="#A6C7F5"/>
+</svg></a>
     <nav class="nav-links">
-      <a href="#">Features</a>
-      <a href="#">Solutions</a>
-      <a href="#">Integrations</a>
-      <a href="#">Pricing</a>
-      <a href="#">Resources</a>
+      <a href="https://vistasocial.com/features/">Features</a>
+      <a href="https://vistasocial.com/solutions/">Solutions</a>
+      <a href="https://vistasocial.com/integrations/">Integrations</a>
+      <a href="https://vistasocial.com/pricing/">Pricing</a>
+      <a href="https://vistasocial.com/insights/">Resources</a>
     </nav>
-    <div class="nav-cta">
-      <a href="#" class="btn btn-secondary" style="border:none; padding:10px 14px;">Log in</a>
-      <a href="#apply" class="btn btn-primary">Apply →</a>
+    <div class="nav-right">
+      <a class="login" href="https://vistasocial.com/login/">Log in</a>
+      <a class="btn btn-primary" href="#apply">Apply &rarr;</a>
     </div>
   </div>
 </header>
 
-<!-- ─── HERO ─── -->
-<section class="hero">
-  <div class="container">
+<section class="dark hero">
+  <div class="wrap-wide">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Vista Social Ambassador Program</span>
-        <h1>For the people <span class="grad">moving social forward</span>.</h1>
-        <p class="lead">An ambassador program built around the access, intel, and recognition serious creators actually want — for the educators, podcasters, and community leaders shaping how social media gets done.</p>
-        <div class="hero-ctas">
-          <a href="#apply" class="btn btn-primary">Apply to join →</a>
-          <a href="#what" class="btn btn-secondary">See what's inside</a>
+        <div class="eyebrow-wrap"><span class="chip chip-d"><span class="chip-dot">&#10022;</span> Vista Social Ambassador Program</span></div>
+        <h1>For the people <span class="grad-d">moving social forward</span>.</h1>
+        <p class="lead">Recommend a tool you already use, earn on it for as long as your referrals stay. Lifetime commission, paid every 30 days, plus the access, intel, and recognition serious creators actually want.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#apply">Apply to join &rarr;</a>
+          <a class="btn btn-ghost" href="#lifetime">See what you earn</a>
         </div>
-        <p class="hero-microcopy">First 25 accepted become <strong>Founding Ambassadors</strong> — locked-in rates and permanent recognition.</p>
+        <div class="trust">
+          <span><b>Lifetime</b> commission</span>
+          <span>Paid every <b>30 days</b></span>
+          <span><b>90-day</b> cookie</span>
+        </div>
+        <p class="note">Application and a 30-minute call required. The first 25 accepted become <b>Founding Ambassadors</b>, with permanent recognition in the program.</p>
       </div>
-      <div class="quote-card">
-        <div class="quote-video">
-          <div class="play-btn"></div>
-        </div>
-        <div class="quote-meta">
-          <div class="quote-avatar">CC</div>
-          <div>
-            <div class="quote-name">Chris Cunningham</div>
-            <div class="quote-role">Ex-ClickUp · Founding Ambassador</div>
+      <div>
+        <div class="media">
+          <div class="media-inner"><span class="play" role="img" aria-label="Video"></span></div>
+          <div class="byline">
+            <span class="avatar">CC</span>
+            <span>
+              <span class="n">Chris Cunningham</span><br>
+              <span class="r">ClickUp, Vista Social</span>
+            </span>
           </div>
         </div>
       </div>
@@ -270,273 +228,296 @@
   </div>
 </section>
 
-<!-- ─── INTRO / WHAT IT IS ─── -->
-<section id="what" class="alt-bg">
-  <div class="container">
-    <div class="intro">
-      <span class="eyebrow">What this is</span>
+<section id="lifetime">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-wrap"><span class="chip"><span class="chip-dot">&#10022;</span> The money</span></div>
+      <h2>Every customer you bring <span class="grad">stays yours</span>.</h2>
+      <p class="lede">Most programs pay you for a year, then quietly keep the customer you found them. Ours does not expire. Refer someone once and you earn on that account for as long as they keep paying.</p>
+    </div>
+
+    <div class="money">
+      <div class="card">
+        <span class="big">30% for life</span>
+        <p>On everything your referrals spend. Base plan, upgrades, add-ons. No 12-month cliff, no step-down.</p>
+      </div>
+      <div class="card">
+        <span class="big">Every 30 days</span>
+        <p>Commissions are paid on a 30-day cycle. Payout method is flexible, we sort it with you during onboarding.</p>
+      </div>
+      <div class="card">
+        <span class="big">90-day cookie</span>
+        <p>Someone clicks your link today and signs up ten weeks later, it still counts as yours.</p>
+      </div>
+    </div>
+
+    <div class="stack">
+      <h3>Why lifetime compounds</h3>
+      <ol>
+        <li>The accounts you refer this quarter are still paying you next year, without you doing anything else.</li>
+        <li>Next quarter's referrals stack on top of them instead of replacing them.</li>
+        <li>As your referrals grow their teams and upgrade plans, your share of that account grows with them.</li>
+      </ol>
+      <p>A 12-month program resets your income every year. This one builds a base you keep adding to, which is the difference between a payout and a revenue stream.</p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">&nbsp;</th><th scope="col">Affiliate Program</th><th scope="col">Ambassador Program</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Commission</td><td>20%</td><td class="hl">30%</td></tr>
+          <tr><td>How long you earn</td><td>12 months per referral</td><td class="hl">Lifetime of the account</td></tr>
+          <tr><td>Cookie window</td><td>90 days</td><td class="hl">90 days</td></tr>
+          <tr><td>Getting in</td><td>Self-serve signup, open to anyone</td><td class="hl">Application and a 30-minute call</td></tr>
+          <tr><td>What else comes with it</td><td>Links, assets, dashboard</td><td class="hl">Early intel, beta access, team access, content collabs, speaking slots, program support</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-wrap"><span class="chip chip-d"><span class="chip-dot">&#10022;</span> What this is</span></div>
       <h2>A program, not a payout.</h2>
-      <p>The Vista Social Ambassador Program is built for creators who already shape how their audience thinks about social media. You get the intel before anyone else sees it. You get real access to the team building Vista Social. You get rewarded properly for the partners and customers you bring in. And you get the kind of designation that sits well on your landing page, your podcast bio, and your speaker intro.</p>
-      <p>This is a separate track from our standard affiliate program. Different rates, different access, different conversation.</p>
+      <p class="lede">The Vista Social Ambassador Program is built for creators who already shape how their audience thinks about social media. You get the intel before anyone else sees it. You get real access to the team building Vista Social. You get rewarded properly, and permanently, for the customers you bring in. And you get the kind of designation that sits well on your landing page, your podcast bio, and your speaker intro.</p>
+      <p class="lede">This is a separate track from our standard affiliate program. Different rates, different access, different conversation.</p>
     </div>
   </div>
 </section>
 
-<!-- ─── WHO IT'S FOR ─── -->
 <section>
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Who it's for</span>
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow-wrap"><span class="chip"><span class="chip-dot">&#10022;</span> Who it is for</span></div>
       <h2>Built for creators, not coupon sites.</h2>
-      <p class="lead" style="margin-top:16px;">If you fit one of these, you're who we built this for.</p>
+      <p class="lede">If you fit one of these, you are who we built this for.</p>
     </div>
-    <div class="audience-grid">
-      <div class="aud-card">
-        <div class="aud-icon">📚</div>
-        <h4>Marketing educators &amp; course creators</h4>
-        <p>Teaching social media, content strategy, or agency growth.</p>
-      </div>
-      <div class="aud-card">
-        <div class="aud-icon">💬</div>
-        <h4>Community leaders</h4>
-        <p>Running engaged Slacks, Discords, or Facebook groups (1K+ active members).</p>
-      </div>
-      <div class="aud-card">
-        <div class="aud-icon">🎙️</div>
-        <h4>Podcasters &amp; YouTubers</h4>
-        <p>In the marketing, SMB, agency, or creator-economy space — any audience size if the work is real.</p>
-      </div>
-      <div class="aud-card">
-        <div class="aud-icon">🎤</div>
-        <h4>Authors, speakers, consultants</h4>
-        <p>With a real social presence and a stage.</p>
-      </div>
-      <div class="aud-card">
-        <div class="aud-icon">🏢</div>
-        <h4>In-house social leads</h4>
-        <p>At recognizable brands who teach or speak publicly.</p>
-      </div>
-      <div class="aud-card" style="background: linear-gradient(135deg, #F0F6FF, #F6F1FF, #FFF1FA); border-color: transparent;">
-        <div class="aud-icon" style="background: rgba(255,255,255,0.7);">✨</div>
-        <h4>The common thread</h4>
-        <p>You actively produce real content for an audience that trusts you. Not famous required — just real.</p>
-      </div>
+    <div class="grid g3" style="margin-top:44px;">
+      <div class="card"><span class="ico">&#128218;</span><h3>Marketing educators and course creators</h3><p>Teaching social media, content strategy, or agency growth.</p></div>
+      <div class="card"><span class="ico">&#128172;</span><h3>Community leaders</h3><p>Running engaged Slacks, Discords, or Facebook groups with 1,000 or more active members.</p></div>
+      <div class="card"><span class="ico">&#127897;&#65039;</span><h3>Podcasters and YouTubers</h3><p>In the marketing, SMB, agency, or creator-economy space. Any audience size if the work is real.</p></div>
+      <div class="card"><span class="ico">&#127908;</span><h3>Authors, speakers, consultants</h3><p>With a real social presence and a stage.</p></div>
+      <div class="card"><span class="ico">&#127970;</span><h3>In-house social leads</h3><p>At recognizable brands, who teach or speak publicly.</p></div>
+      <div class="card" style="background:var(--tint-blue);border-color:#CFE3FF;"><span class="ico">&#10022;</span><h3>The common thread</h3><p>You actively produce real content for an audience that trusts you. Famous is not required. Real is.</p></div>
     </div>
-    <div class="not-for">
-      <h4>This is not for</h4>
-      <p>Coupon and deal sites · generic affiliate marketers · anyone whose primary tactic is paid search on Vista Social brand keywords · black-hat plays (fake reviews, incentivized review farms, coupon farms).</p>
-    </div>
+    <p class="lede" style="margin-top:28px;"><strong style="color:var(--ink);font-weight:600;">This is not for:</strong> coupon and deal sites, generic affiliate marketers, anyone whose primary tactic is paid search on Vista Social brand keywords, or black-hat plays such as fake reviews, incentivized review farms, and coupon farms.</p>
   </div>
 </section>
 
-<!-- ─── BENEFITS (5 pillars) ─── -->
-<section class="alt-bg">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">What you get</span>
-      <h2>Built around <span class="grad">five things</span> you actually need.</h2>
+<section style="background:var(--surface-alt);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-wrap"><span class="chip"><span class="chip-dot">&#10022;</span> What you get</span></div>
+      <h2>Built around five things you actually need.</h2>
     </div>
+    <div class="grid g2" style="margin-top:44px;">
 
-    <!-- BUSINESS -->
-    <div class="pillar">
-      <div class="pillar-label">
-        <span class="badge badge-business">For your business</span>
-        <h3>Revenue + growth</h3>
+      <div class="bgroup">
+        <span class="tag">For your business</span>
+        <h3>Revenue and growth</h3>
+        <ul>
+          <li><strong>Lifetime 30% revenue share</strong> on everything your referrals spend, including base plans, upgrades, and add-ons.</li>
+          <li><strong>Paid every 30 days</strong>, with a flexible payout setup arranged during onboarding.</li>
+          <li><strong>90-day cookie</strong>, so slow decisions still land with you.</li>
+          <li><strong>Community First option.</strong> Redirect part or all of your commission into a deeper discount for your audience. Activate 100 or more this way and unlock the Community First designation.</li>
+          <li><strong>Concierge onboarding</strong> for anyone you refer. They skip the line and get a real human walking them through setup.</li>
+          <li><strong>Bring someone in.</strong> Sponsor up to 2 new ambassadors per year and earn a 5% override on their commissions for 12 months. We pay it, it does not reduce theirs.</li>
+        </ul>
       </div>
-      <div class="pillar-list">
-        <div class="pillar-item"><span class="check">✓</span><p><strong>30% revenue share for 12 months</strong> on everything your referrals spend — base, upgrades, add-ons. (Standard affiliate is 20%.)</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Community First option</strong> — redirect part or all of your commission into a deeper discount for your audience. Activate 100+ this way and unlock the Community First designation.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Concierge onboarding</strong> for anyone you refer — they skip the line and get a real human walking them through setup.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Bring someone in</strong> — sponsor up to 2 new ambassadors per year. Earn a 5% override on their commissions for 12 months. We pay it; doesn't reduce theirs.</p></div>
-      </div>
-    </div>
 
-    <!-- AUDIENCE -->
-    <div class="pillar">
-      <div class="pillar-label">
-        <span class="badge badge-audience">For your audience</span>
+      <div class="bgroup">
+        <span class="tag">For your audience</span>
         <h3>Things you can give away</h3>
+        <ul>
+          <li>20% off year one for anyone who signs up through you, or whatever you reallocate to.</li>
+          <li>Extended free trial for your community.</li>
+          <li>Co-branded templates and lead magnets. Content calendars, audit checklists, and AI prompt packs you can hand out under a co-branded format.</li>
+          <li>White-labeled workshop kits. Slides and scripts so you can run "Social Media for [your audience]" sessions under your own brand.</li>
+        </ul>
       </div>
-      <div class="pillar-list">
-        <div class="pillar-item"><span class="check">✓</span><p><strong>20% off year one</strong> for anyone who signs up through you (or whatever you reallocate to).</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Extended free trial</strong> for your community.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Co-branded templates &amp; lead magnets</strong> — content calendars, audit checklists, AI prompt packs you can hand out under a co-branded format.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>White-labeled workshop kits</strong> — slides and scripts so you can run "Social Media for [your audience]" sessions under your own brand.</p></div>
-      </div>
-    </div>
 
-    <!-- INTEL (the bragging right) -->
-    <div class="pillar">
-      <div class="pillar-label">
-        <span class="badge badge-intel">Intel &amp; insider knowledge</span>
+      <div class="bgroup">
+        <span class="tag">Intel and insider knowledge</span>
         <h3>The bragging right</h3>
+        <ul>
+          <li><strong>Monthly Trends Brief.</strong> Algorithm shifts, format trends, what is working right now. Sent to ambassadors before any of it goes public.</li>
+          <li><strong>Quarterly State of Social report.</strong> Our read on what actually changed across the platforms, what the research supports, and what to do about it next quarter.</li>
+          <li><strong>Algorithm change alerts.</strong> Same-day breakdowns when LinkedIn, Instagram, TikTok, or any platform shifts ranking.</li>
+          <li><strong>Viral teardowns.</strong> Short briefs on what is blowing up and why.</li>
+          <li>Private webinars with our team and outside guest experts.</li>
+          <li>Contributor credit on the State of Social report when your field intel feeds in.</li>
+        </ul>
+        <p class="why"><strong>Why this matters:</strong> the intel is yours to share with your audience, under your byline, with attribution to Vista Social. Being an ambassador means being a source.</p>
       </div>
-      <div class="pillar-list">
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Monthly Trends Brief</strong> — algorithm shifts, format trends, what's working right now. Sent to ambassadors before any of it goes public.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Quarterly State of Social report</strong> — drawn from anonymized aggregate data across thousands of Vista Social accounts. Real numbers nobody else has.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Algorithm change alerts</strong> — same-day breakdowns when LinkedIn, Instagram, TikTok, or any platform shifts ranking.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Viral teardowns</strong> — short briefs on what's blowing up and why.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Private webinars</strong> with our data team and outside guest experts.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Co-author credit</strong> on the State of Social report when your field intel feeds in.</p></div>
-      </div>
-      <div class="intel-callout" style="grid-column: 1 / -1;">
-        <p><strong>Why this matters:</strong> The intel is yours to share with your audience — under your byline, with attribution to Vista Social. Being an ambassador means being a source.</p>
-      </div>
-    </div>
 
-    <!-- CRAFT -->
-    <div class="pillar">
-      <div class="pillar-label">
-        <span class="badge badge-craft">For your craft</span>
-        <h3>Access + reputation</h3>
+      <div class="bgroup">
+        <span class="tag">For your craft</span>
+        <h3>Access and reputation</h3>
+        <ul>
+          <li>Priority access to every beta and unreleased feature before anyone else.</li>
+          <li>Quarterly 1:1 with Vista Social's performance marketer. 60 minutes, every quarter, on whatever you want to talk about.</li>
+          <li>Working access to our social media managers and support team for tactical questions.</li>
+          <li>Speaking slots on Vista Social webinars, virtual summits, and in-person events.</li>
+          <li>Content collabs. Co-authored posts, interviews, sneak-peek demos, podcast guest spots.</li>
+          <li>Guest posting on the Vista Social blog.</li>
+          <li>10% to 100% off your own Vista Social plan, set during onboarding.</li>
+          <li>A direct line to a real human on the Vista Social team. Not a queue.</li>
+        </ul>
       </div>
-      <div class="pillar-list">
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Priority access</strong> to every beta and unreleased feature before anyone else.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Quarterly 1:1</strong> with Vista Social's performance marketer — 60 minutes, every quarter, on whatever you want to talk about.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Working access</strong> to our social media managers and support team for tactical questions.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Speaking slots</strong> on Vista Social webinars, virtual summits, and in-person events.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Content collabs</strong> — co-authored posts, interviews, sneak-peek demos, podcast guest spots.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Guest posting</strong> on the Vista Social blog.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>10–100% off your own Vista Social plan</strong> — set during onboarding.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>A direct line to a real human</strong> on the Vista Social team. Not a queue.</p></div>
-      </div>
-    </div>
 
-    <!-- RECOGNITION -->
-    <div class="pillar">
-      <div class="pillar-label">
-        <span class="badge badge-recog">Recognition</span>
+      <div class="bgroup" style="grid-column:1 / -1;">
+        <span class="tag">Recognition</span>
         <h3>Bragging rights, properly</h3>
+        <ul>
+          <li>Verified Ambassador badge on your public Vista Social profile and shareable reports.</li>
+          <li>Tier system with physical recognition awards at tenure and contribution milestones.</li>
+          <li>Founding Ambassador designation for the first 25 accepted, with permanent recognition in the program's history.</li>
+        </ul>
       </div>
-      <div class="pillar-list">
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Verified Ambassador badge</strong> on your public Vista Social profile and shareable reports.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Tier system</strong> with physical recognition awards at tenure and contribution milestones.</p></div>
-        <div class="pillar-item"><span class="check">✓</span><p><strong>Founding Ambassador</strong> designation for the first 25 — locked-in rates and permanent recognition in the program's history.</p></div>
-      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ─── WHAT WE ASK ─── -->
-<section>
-  <div class="container">
-    <div class="asks-grid">
-      <div class="asks-intro">
-        <span class="eyebrow">What we ask</span>
-        <h2>A real partnership cuts both ways.</h2>
-        <p>This isn't a list to get on and forget. Ambassadors who go quiet are removed at the annual review. The shortlist stays short on purpose — that's what makes being on it mean something.</p>
-      </div>
-      <ul class="asks-list">
-        <li><span class="num">1</span><p><strong>One piece of authentic content per quarter</strong> in your format — review, tutorial, case study, podcast mention, newsletter, video.</p></li>
-        <li><span class="num">2</span><p><strong>Field intel back to us</strong> — respond to occasional pulse surveys, share what you're seeing. Your input goes into the reports you also receive.</p></li>
-        <li><span class="num">3</span><p><strong>FTC disclosure</strong> on anything promotional. Standard practice.</p></li>
-        <li><span class="num">4</span><p><strong>Annual review</strong> with teeth, not a formality. Inactive ambassadors are removed. Re-application allowed.</p></li>
-        <li><span class="num">5</span><p><strong>No black-hat plays</strong> — no brand bidding on Vista Social keywords, no fake reviews, no coupon-farm distribution.</p></li>
-        <li><span class="num">6</span><p><strong>Be a real Vista Social user.</strong> You can't promote something you don't use. We'll know, and so will your audience.</p></li>
-      </ul>
+<section class="dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-wrap"><span class="chip chip-d"><span class="chip-dot">&#10022;</span> What we ask</span></div>
+      <h2>A real partnership cuts both ways.</h2>
+      <p class="lede">This is not a list to get on and forget. Ambassadors who go quiet are removed at the annual review. The shortlist stays short on purpose. That is what makes being on it mean something.</p>
     </div>
+    <ul class="asks" style="color:var(--muted-dark);">
+      <li><span class="n">1</span><span>One piece of authentic content per quarter in your format. A review, tutorial, case study, podcast mention, newsletter, or video.</span></li>
+      <li><span class="n">2</span><span>Field intel back to us. Respond to occasional pulse surveys and share what you are seeing. Your input goes into the reports you also receive.</span></li>
+      <li><span class="n">3</span><span>FTC disclosure on anything promotional. Standard practice.</span></li>
+      <li><span class="n">4</span><span>Annual review with teeth, not a formality. Inactive ambassadors are removed from the program. Re-application is allowed.</span></li>
+      <li><span class="n">5</span><span>No black-hat plays. No brand bidding on Vista Social keywords, no fake reviews, no coupon-farm distribution, no misleading claims about the product.</span></li>
+      <li><span class="n">6</span><span>Be a real Vista Social user. You cannot promote something you do not use. We will know, and so will your audience.</span></li>
+    </ul>
   </div>
 </section>
 
-<!-- ─── HOW TO APPLY ─── -->
-<section id="apply" class="alt-bg">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">How to apply</span>
+<section id="apply">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow-wrap"><span class="chip"><span class="chip-dot">&#10022;</span> How to apply</span></div>
       <h2>Three steps. About a week, end to end.</h2>
     </div>
     <div class="steps">
       <div class="step">
-        <div class="step-num">STEP 01</div>
+        <span class="num">STEP 01</span>
         <h3>Apply</h3>
-        <p>Fill out the form. We'll ask about your work, your audience, and how you'd want to use the program. The more specific the better.</p>
+        <p style="color:var(--muted);font-size:15.5px;margin:0;">Fill out the form. We will ask about your work, your audience, and how you would want to use the program. The more specific the better.</p>
       </div>
       <div class="step">
-        <div class="step-num">STEP 02</div>
+        <span class="num">STEP 02</span>
         <h3>30-minute call</h3>
-        <p>If your application clears the bar, we'll set up a call with Dawid, who runs the program. We'll walk through the details and figure out the right setup for you.</p>
+        <p style="color:var(--muted);font-size:15.5px;margin:0;">If your application clears the bar, we will set up a call with Dawid, who runs the program. We walk through the details and figure out the right setup for you.</p>
       </div>
       <div class="step">
-        <div class="step-num">STEP 03</div>
+        <span class="num">STEP 03</span>
         <h3>Welcome kit</h3>
-        <p>Ambassador dashboard, co-branded assets, intro to our performance marketer, plan discount applied, badge turned on.</p>
+        <p style="color:var(--muted);font-size:15.5px;margin:0;">Ambassador dashboard, co-branded assets, intro to our performance marketer, plan discount applied, badge turned on.</p>
       </div>
     </div>
-    <div style="text-align:center; margin-top:48px;">
-      <a href="#" class="btn btn-primary">Start your application →</a>
+    <div style="text-align:center;margin-top:40px;">
+      <a class="btn btn-primary" href="#apply">Start your application &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- ─── FAQ ─── -->
-<section>
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">FAQ</span>
+<section style="background:var(--surface-alt);">
+  <div class="wrap" style="max-width:900px;">
+    <div class="section-head center">
+      <div class="eyebrow-wrap"><span class="chip"><span class="chip-dot">&#10022;</span> FAQ</span></div>
       <h2>Common questions.</h2>
     </div>
-    <div class="faq">
-      <div class="faq-item"><details><summary>How is this different from your affiliate program?</summary><p>The affiliate program is open to anyone, pays 20%, and runs through self-service signup. The Ambassador Program is application-based, pays 30% for 12 months, and includes intel, beta access, team access, content collabs, and program support you don't get as an affiliate.</p></details></div>
-      <div class="faq-item"><details><summary>Can I be both an affiliate and an ambassador?</summary><p>Yes. But commissions don't stack on the same referral.</p></details></div>
-      <div class="faq-item"><details><summary>Can I bring someone else into the program?</summary><p>Once you've been active for a bit, yes — up to two sponsored applications per year. You vouch for them, they skip the review queue, and you earn a 5% override on their commissions for 12 months.</p></details></div>
-      <div class="faq-item"><details><summary>How long does the review take?</summary><p>Usually under a week from application to call. Sometimes faster.</p></details></div>
-      <div class="faq-item"><details><summary>What happens if I'm not accepted?</summary><p>We'll tell you why. In most cases it's a fit issue, not a quality issue — the affiliate program may be the right home, and we'll point you there.</p></details></div>
-      <div class="faq-item"><details><summary>Can I leave the program?</summary><p>Anytime, with 30 days' notice. Commissions on existing referrals continue through their 12-month window.</p></details></div>
-      <div class="faq-item"><details><summary>Can I be removed from the program?</summary><p>Yes. Ambassadors who go inactive are removed at the annual review. We also remove anyone using black-hat tactics or misrepresenting the product. We'd rather have 50 active ambassadors than 500 dormant ones.</p></details></div>
-      <div class="faq-item"><details><summary>Are commissions stackable with the discount on my own plan?</summary><p>Yes — your plan discount and your referral commissions are separate.</p></details></div>
-      <div class="faq-item"><details><summary>What counts as "one piece of content per quarter"?</summary><p>Anything authentic in your native format. A YouTube video, a podcast mention, a newsletter feature, a tutorial post, a case study, a livestream demo. We're not counting words — we're looking for genuine work.</p></details></div>
-      <div class="faq-item"><details><summary>Do I need to use Vista Social to apply?</summary><p>You need to be using it (or actively onboarding) by the time you're accepted. We don't accept partners who promote products they haven't worked with.</p></details></div>
+    <div style="margin-top:36px;">
+      <details open><summary>How is this different from your affiliate program?</summary><p>The affiliate program is open to anyone, pays 20% for 12 months, and runs through self-service signup. The Ambassador Program is application-based, pays 30% for the lifetime of the account, and includes intel, beta access, team access, content collabs, and program support you do not get as an affiliate.</p></details>
+      <details><summary>What does "lifetime" actually mean?</summary><p>You earn your 30% on a referred account for as long as that account keeps paying. There is no 12-month window and no step-down. If they upgrade or add on, your share of that account goes up with it.</p></details>
+      <details><summary>When do I get paid?</summary><p>Every 30 days. We keep the payout method flexible for ambassadors and set it up with you during onboarding.</p></details>
+      <details><summary>How long does my referral link stay attached to someone?</summary><p>90 days. If they click your link and sign up any time inside that window, the referral is yours.</p></details>
+      <details><summary>Can I leave the program?</summary><p>Anytime, with 30 days' notice. Your existing referrals keep paying out. Lifetime means lifetime, whether or not you are still active in the program.</p></details>
+      <details><summary>Can I be removed from the program?</summary><p>Yes, and it matters which kind. If you go inactive, you lose your place in the program at the annual review, but your existing commissions continue. If you are removed for cause, meaning black-hat tactics, misleading customers, or breaking the terms, commissions stop with the removal.</p></details>
+      <details><summary>Can I be both an affiliate and an ambassador?</summary><p>Yes. Commissions do not stack on the same referral.</p></details>
+      <details><summary>Can I bring someone else into the program?</summary><p>Once you have been active for a bit, yes, up to two sponsored applications per year. You vouch for them, they skip the review queue, and you earn a 5% override on their commissions for 12 months. The override is the one part of the program that is not lifetime.</p></details>
+      <details><summary>How long does the review take?</summary><p>Usually under a week from application to call. Sometimes faster.</p></details>
+      <details><summary>What happens if I am not accepted?</summary><p>We will tell you why. In most cases it is a fit issue, not a quality issue. The affiliate program may be the right home, and we will point you there.</p></details>
+      <details><summary>Are commissions stackable with the discount on my own plan?</summary><p>Yes. Your plan discount and your referral commissions are separate.</p></details>
+      <details><summary>What counts as one piece of content per quarter?</summary><p>Anything authentic in your native format. A YouTube video, a podcast mention, a newsletter feature, a tutorial post, a case study, a livestream demo. We are not counting words, we are looking for genuine work.</p></details>
+      <details><summary>Do I need to use Vista Social to apply?</summary><p>You need to be using it, or actively onboarding, by the time you are accepted. We do not accept partners who promote products they have not worked with.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ─── FINAL CTA ─── -->
-<section class="final-cta">
-  <div class="container">
+<section class="dark final">
+  <div class="wrap">
     <h2>Ready when you are.</h2>
-    <p>First 25 accepted become Founding Ambassadors — rates locked in for as long as you're active, plus permanent recognition in the program. After that, the program stays open, but Founding status doesn't.</p>
-    <a href="#apply" class="btn btn-on-dark">Apply now →</a>
+    <p class="lede" style="max-width:40em;margin:0 auto 26px;">The first 25 accepted become Founding Ambassadors, with permanent recognition in the program. After that the program stays open, but Founding status does not.</p>
+    <a class="btn btn-primary" href="#apply">Apply now &rarr;</a>
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="../../media/assets/logo-horizontal-dark.png" alt="Vista Social" />
-      <p>Manage every social account, every client, every campaign — all from one platform built for the way social actually works.</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <svg aria-hidden="true" focusable="false" width="177" height="41" viewBox="0 0 177 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M123.488 16.9292L122.734 19.0612C120.879 18.4546 119.501 18.1512 118.6 18.1512C117.491 18.1512 116.936 18.5672 116.936 19.3992C116.936 19.5379 116.953 19.6679 116.988 19.7892C117.023 19.8932 117.092 19.9886 117.196 20.0752C117.3 20.1619 117.395 20.2399 117.482 20.3092C117.586 20.3612 117.742 20.4306 117.95 20.5172C118.158 20.5866 118.323 20.6472 118.444 20.6992C118.583 20.7339 118.799 20.7946 119.094 20.8812C119.389 20.9679 119.623 21.0372 119.796 21.0892C121.321 21.5572 122.37 22.0426 122.942 22.5452C123.514 23.0479 123.8 23.8712 123.8 25.0152C123.8 26.1766 123.384 27.0866 122.552 27.7452C121.737 28.4039 120.593 28.7332 119.12 28.7332C117.196 28.7332 115.376 28.1699 113.66 27.0432L114.648 25.0152C116.208 25.9339 117.699 26.3932 119.12 26.3932C120.351 26.3932 120.966 25.9859 120.966 25.1712C120.966 24.9979 120.949 24.8419 120.914 24.7032C120.879 24.5646 120.81 24.4432 120.706 24.3392C120.602 24.2352 120.498 24.1486 120.394 24.0792C120.307 24.0099 120.151 23.9319 119.926 23.8452C119.701 23.7586 119.51 23.6979 119.354 23.6632C119.215 23.6112 118.964 23.5332 118.6 23.4292C118.253 23.3252 117.976 23.2386 117.768 23.1692C116.503 22.7706 115.584 22.3112 115.012 21.7912C114.457 21.2712 114.18 20.5519 114.18 19.6332C114.18 18.4372 114.553 17.5099 115.298 16.8512C116.061 16.1926 117.144 15.8632 118.548 15.8632C120.004 15.8632 121.651 16.2186 123.488 16.9292Z" fill="#0063E3"/>
+<path d="M131.764 15.9152C133.688 15.8979 135.213 16.4786 136.34 17.6572C137.484 18.8186 138.056 20.3959 138.056 22.3892C138.056 24.3306 137.484 25.8732 136.34 27.0172C135.213 28.1612 133.688 28.7332 131.764 28.7332C129.84 28.7332 128.314 28.1612 127.188 27.0172C126.061 25.8732 125.498 24.3306 125.498 22.3892C125.498 20.3959 126.061 18.8186 127.188 17.6572C128.332 16.4786 129.857 15.8979 131.764 15.9152ZM129.268 25.2752C129.874 25.9512 130.706 26.2892 131.764 26.2892C132.821 26.2892 133.653 25.9512 134.26 25.2752C134.866 24.5819 135.17 23.6199 135.17 22.3892C135.17 21.1066 134.866 20.1099 134.26 19.3992C133.653 18.6886 132.821 18.3332 131.764 18.3332C130.724 18.3332 129.9 18.6886 129.294 19.3992C128.687 20.1099 128.384 21.1066 128.384 22.3892C128.384 23.6199 128.678 24.5819 129.268 25.2752Z" fill="#0063E3"/>
+<path d="M150.037 25.0932L150.999 26.9132C150.132 27.5892 149.291 28.0659 148.477 28.3432C147.679 28.6032 146.717 28.7332 145.591 28.7332C143.875 28.7332 142.479 28.1612 141.405 27.0172C140.33 25.8732 139.793 24.3306 139.793 22.3892C139.793 20.3959 140.347 18.8186 141.457 17.6572C142.566 16.4786 144.031 15.8892 145.851 15.8892C147.567 15.8892 149.135 16.3139 150.557 17.1632L149.621 19.0872C148.494 18.5672 147.307 18.3072 146.059 18.3072C145.036 18.3072 144.213 18.6799 143.589 19.4252C142.982 20.1532 142.679 21.1412 142.679 22.3892C142.679 23.5852 142.973 24.5386 143.563 25.2492C144.169 25.9426 144.984 26.2892 146.007 26.2892C147.411 26.2892 148.754 25.8906 150.037 25.0932Z" fill="#0063E3"/>
+<path d="M153.374 13.7052C153.045 13.4279 152.88 13.0379 152.88 12.5352C152.88 12.0326 153.045 11.6426 153.374 11.3652C153.704 11.0879 154.111 10.9492 154.596 10.9492C155.082 10.9492 155.489 11.0879 155.818 11.3652C156.148 11.6426 156.312 12.0326 156.312 12.5352C156.312 13.0379 156.148 13.4279 155.818 13.7052C155.489 13.9652 155.082 14.0952 154.596 14.0952C154.111 14.0952 153.704 13.9652 153.374 13.7052ZM156.078 28.4992H153.14V16.1492H156.078V28.4992Z" fill="#0063E3"/>
+<path d="M167.81 28.4992V26.9652C167.134 27.5892 166.519 28.0399 165.964 28.3172C165.41 28.5946 164.664 28.7332 163.728 28.7332C162.272 28.7332 161.059 28.1959 160.088 27.1212C159.118 26.0466 158.632 24.4259 158.632 22.2592C158.632 18.0299 160.236 15.9152 163.442 15.9152C165.02 15.9152 166.476 16.4526 167.81 17.5272V16.1492H170.748V28.4992H167.81ZM167.81 24.4692V20.2312C166.736 19.0006 165.609 18.3852 164.43 18.3852C162.506 18.3852 161.544 19.6766 161.544 22.2592C161.544 23.6286 161.83 24.6426 162.402 25.3012C162.974 25.9599 163.711 26.2892 164.612 26.2892C165.306 26.2892 165.869 26.1592 166.302 25.8992C166.736 25.6219 167.238 25.1452 167.81 24.4692Z" fill="#0063E3"/>
+<path d="M176.972 28.4992H174.034V11.5992H176.972V28.4992Z" fill="#0063E3"/>
+<path d="M64.5284 28.4992H61.3304L56.2344 16.1232H59.1984L62.2924 23.5332C62.431 23.8626 62.639 24.5039 62.9164 25.4572C63.3324 24.2266 63.549 23.5852 63.5664 23.5332L66.7644 16.1232H69.7284L64.5284 28.4992Z" fill="white"/>
+<path d="M71.7696 13.7052C71.4402 13.4279 71.2756 13.0379 71.2756 12.5352C71.2756 12.0326 71.4402 11.6426 71.7696 11.3652C72.0989 11.0879 72.5062 10.9492 72.9916 10.9492C73.4769 10.9492 73.8842 11.0879 74.2136 11.3652C74.5429 11.6426 74.7076 12.0326 74.7076 12.5352C74.7076 13.0379 74.5429 13.4279 74.2136 13.7052C73.8842 13.9652 73.4769 14.0952 72.9916 14.0952C72.5062 14.0952 72.0989 13.9652 71.7696 13.7052ZM74.4736 28.4992H71.5356V16.1492H74.4736V28.4992Z" fill="white"/>
+<path d="M87.034 16.9292L86.28 19.0612C84.4254 18.4546 83.0473 18.1512 82.146 18.1512C81.0367 18.1512 80.482 18.5672 80.482 19.3992C80.482 19.5379 80.4994 19.6679 80.534 19.7892C80.5687 19.8932 80.638 19.9886 80.742 20.0752C80.846 20.1619 80.9414 20.2399 81.028 20.3092C81.132 20.3612 81.288 20.4306 81.496 20.5172C81.704 20.5866 81.8687 20.6472 81.99 20.6992C82.1287 20.7339 82.3454 20.7946 82.64 20.8812C82.9347 20.9679 83.1687 21.0372 83.342 21.0892C84.8674 21.5572 85.916 22.0426 86.488 22.5452C87.06 23.0479 87.346 23.8712 87.346 25.0152C87.346 26.1766 86.93 27.0866 86.098 27.7452C85.2833 28.4039 84.1394 28.7332 82.666 28.7332C80.742 28.7332 78.922 28.1699 77.206 27.0432L78.194 25.0152C79.754 25.9339 81.2447 26.3932 82.666 26.3932C83.8967 26.3932 84.512 25.9859 84.512 25.1712C84.512 24.9979 84.4947 24.8419 84.46 24.7032C84.4254 24.5646 84.356 24.4432 84.252 24.3392C84.148 24.2352 84.044 24.1486 83.94 24.0792C83.8534 24.0099 83.6974 23.9319 83.472 23.8452C83.2467 23.7586 83.056 23.6979 82.9 23.6632C82.7614 23.6112 82.51 23.5332 82.146 23.4292C81.7994 23.3252 81.522 23.2386 81.314 23.1692C80.0487 22.7706 79.13 22.3112 78.558 21.7912C78.0034 21.2712 77.726 20.5519 77.726 19.6332C77.726 18.4372 78.0987 17.5099 78.844 16.8512C79.6067 16.1926 80.69 15.8632 82.094 15.8632C83.55 15.8632 85.1967 16.2186 87.034 16.9292Z" fill="white"/>
+<path d="M97.083 25.9772L97.395 27.9532C96.3377 28.4039 95.2977 28.6292 94.275 28.6292C92.9057 28.6292 91.9177 28.2912 91.311 27.6152C90.7217 26.9392 90.427 25.8386 90.427 24.3132V18.5932H88.607V16.1232H90.427V13.1592H93.391V16.1232H96.823V18.5932H93.391V24.1832C93.391 24.9112 93.5297 25.4139 93.807 25.6912C94.1017 25.9512 94.6043 26.0812 95.315 26.0812C95.939 26.0812 96.5283 26.0466 97.083 25.9772Z" fill="white"/>
+<path d="M107.964 28.4992V26.9652C107.288 27.5892 106.673 28.0399 106.118 28.3172C105.564 28.5946 104.818 28.7332 103.882 28.7332C102.426 28.7332 101.213 28.1959 100.242 27.1212C99.2718 26.0466 98.7864 24.4259 98.7864 22.2592C98.7864 18.0299 100.39 15.9152 103.596 15.9152C105.174 15.9152 106.63 16.4526 107.964 17.5272V16.1492H110.902V28.4992H107.964ZM107.964 24.4692V20.2312C106.89 19.0006 105.763 18.3852 104.584 18.3852C102.66 18.3852 101.698 19.6766 101.698 22.2592C101.698 23.6286 101.984 24.6426 102.556 25.3012C103.128 25.9599 103.865 26.2892 104.766 26.2892C105.46 26.2892 106.023 26.1592 106.456 25.8992C106.89 25.6219 107.392 25.1452 107.964 24.4692Z" fill="white"/>
+<path d="M38.9684 26.8575C39.6375 24.8602 40 22.7225 40 20.5C40 9.4543 31.0457 0.5 20 0.5C9.32666 0.5 0.606073 8.8608 0.0302734 19.3904C0.384604 19.0246 0.735247 18.648 1.08062 18.2604C3.08349 16.0127 4.65899 14.4054 5.94899 13.3267C7.23273 12.2532 8.27032 11.6711 9.19667 11.532C10.1523 11.3886 10.9322 11.7234 11.6669 12.3308C12.3471 12.8932 13.0207 13.7167 13.7895 14.6565L13.9207 14.817C15.5815 16.8454 17.8013 19.4984 21.7493 21.8365C22.6696 22.3815 23.685 22.91 24.8103 23.4096C25.7339 22.9767 26.4607 22.5209 27.0532 22.0771C27.7311 21.5692 28.2408 21.0716 28.6763 20.6265C28.7458 20.5555 28.8141 20.485 28.8815 20.4156L28.8823 20.4147C29.228 20.0581 29.5487 19.7273 29.8754 19.4807C30.2822 19.1736 30.7236 18.9752 31.2855 18.9756C31.8316 18.976 32.4564 19.1646 33.2366 19.5516C35.7327 20.7894 37.9492 22.2441 39.7613 23.5961C39.5872 24.7167 39.3205 25.8066 38.9684 26.8575Z" fill="#0063E3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.2585 40.4984C20.1725 40.4995 20.0863 40.5 20 40.5L20.2585 40.4984ZM20.2585 40.4984C20.2337 40.4987 20.2089 40.4989 20.1841 40.4992C20.1229 40.4997 20.0614 40.5 20 40.5" fill="#0063E3"/>
+<path d="M19.8154 40.4992C19.8767 40.4997 19.9381 40.5 19.9995 40.5C20.061 40.5 20.1223 40.4997 20.1836 40.4992H19.8154Z" fill="#EAF3FF"/>
+<path d="M38.9679 26.8575C39.32 25.8065 39.5872 24.7167 39.7613 23.5961C37.9492 22.2441 35.7327 20.7894 33.2366 19.5516C32.4564 19.1646 31.8316 18.976 31.2854 18.9756C30.7236 18.9752 30.2822 19.1736 29.8754 19.4807C29.5487 19.7273 29.2281 20.0581 28.8824 20.4146L28.8815 20.4156C28.8141 20.485 28.7458 20.5555 28.6763 20.6265C28.2408 21.0716 27.7311 21.5692 27.0532 22.0771C26.4607 22.5209 25.7338 22.9768 24.81 23.4097C28.3138 24.9653 32.8833 26.2401 38.9679 26.8575Z" fill="#EAF3FF"/>
+<path d="M19.8159 40.4992C8.85498 40.4003 0 31.4843 0 20.5C0 20.1277 0.0101749 19.7577 0.0302618 19.3904C0.384592 19.0246 0.735235 18.648 1.08061 18.2604C3.08348 16.0127 4.65898 14.4054 5.94897 13.3267C7.23272 12.2532 8.2703 11.6711 9.19666 11.532C10.1523 11.3886 10.9322 11.7234 11.6669 12.3308C12.3471 12.8932 13.0207 13.7167 13.7895 14.6565L13.9207 14.817C15.5814 16.8454 17.8013 19.4984 21.7493 21.8365C25.5351 24.0785 30.9294 26.0418 38.9684 26.8575C36.3305 34.7313 28.9273 40.4203 20.1841 40.4992H19.8159Z" fill="#A6C7F5"/>
+</svg>
+        <p style="max-width:26em;margin:0;">Manage every social account, every client, every campaign from one platform built for the way social actually works.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="https://vistasocial.com/features/">Features</a></li>
+          <li><a href="https://vistasocial.com/integrations/">Integrations</a></li>
+          <li><a href="https://vistasocial.com/pricing/">Pricing</a></li>
+          <li><a href="https://suggestions.vistasocial.com/changelog">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://vistasocial.com/about/">About</a></li>
+          <li><a href="https://vistasocial.com/customers/">Customers</a></li>
+          <li><a href="https://vistasocial.com/careers/">Careers</a></li>
+          <li><a href="https://vistasocial.com/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners</h4>
+        <ul>
+          <li><a href="https://vistasocial.com/affiliates/">Affiliate Program</a></li>
+          <li><a href="#apply">Ambassador Program</a></li>
+          <li><a href="https://vistasocial.com/agency/">Agency Partners</a></li>
+          <li><a href="https://vistasocial.com/brand-assets/">Press kit</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h5>Product</h5>
-      <ul>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Integrations</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Changelog</a></li>
-      </ul>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Vista Social. All rights reserved.</span>
+      <span><a href="https://vistasocial.com/privacy/">Privacy</a> &middot; <a href="https://vistasocial.com/terms/">Terms</a> &middot; <a href="https://vistasocial.com/cookies/">Cookies</a></span>
     </div>
-    <div>
-      <h5>Company</h5>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Customers</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Partners</h5>
-      <ul>
-        <li><a href="#">Affiliate Program</a></li>
-        <li><a href="#">Ambassador Program</a></li>
-        <li><a href="#">Agency Partners</a></li>
-        <li><a href="#">Press kit</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Vista Social. All rights reserved.</span>
-    <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></span>
   </div>
 </footer>
 

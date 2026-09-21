@@ -9,7 +9,7 @@
     chris                  e.g. "chris"
     Chris Cunningham       e.g. "Chris Cunningham"
     Chris e.g. "Chris"
-    Ex-ClickUp · Founding Ambassador       e.g. "Ex-ClickUp · Founding Ambassador"
+    ClickUp, Vista Social       e.g. "ClickUp, Vista Social"
     chriscunningham.com       e.g. "chriscunningham.com"
     {{ambassador_photo}}      url to headshot, square, transparent or white bg
     {{ambassador_video_url}}  YouTube/Loom/Vimeo embed URL (or fallback poster)
@@ -201,6 +201,27 @@
   .bonuses-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1080px; margin: 0 auto; }
   @media (min-width: 700px) { .bonuses-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1000px) { .bonuses-grid { grid-template-columns: repeat(3, 1fr); } }
+  .bucket { max-width: 1180px; margin: 0 auto 32px; padding: 36px 32px; border-radius: 20px; position: relative; overflow: hidden; }
+  .bucket:last-child { margin-bottom: 0; }
+  .bucket::before { content: ""; position: absolute; inset: 0; background: inherit; opacity: 1; z-index: 0; }
+  .bucket > * { position: relative; z-index: 1; }
+  .bucket--tools { background: linear-gradient(135deg, #EAF2FE 0%, #F4ECFF 100%); border: 1px solid rgba(0,99,227,0.10); }
+  .bucket--smarter { background: linear-gradient(135deg, #F4ECFF 0%, #FFE9F6 100%); border: 1px solid rgba(140,82,255,0.12); }
+  .bucket--signal { background: linear-gradient(135deg, #0A0F1F 0%, #1F2547 60%, #3B2A6B 100%); border: 1px solid rgba(255,255,255,0.08); }
+  .bucket--signal .bucket-title,
+  .bucket--signal .bucket-sub { color: #fff; }
+  .bucket--signal .bucket-sub { color: rgba(255,255,255,0.72); }
+  .bucket--signal .bucket-num { color: #FFD9F0; }
+  .bucket-head { margin-bottom: 22px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .bucket-num { font-weight: 800; font-size: 28px; color: var(--vs-blue); line-height: 1; letter-spacing: -0.02em; }
+  .bucket--smarter .bucket-num { color: var(--vs-purple); }
+  .bucket-title { font-size: 22px; font-weight: 700; color: var(--ink); margin: 0; }
+  .bucket-sub { font-size: 14px; color: var(--ink-soft); margin: 0; flex-basis: 100%; }
+  .bucket .bonuses-grid { max-width: none; }
+  .bucket--signal .bonuses-grid { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+  @media (min-width: 700px) { .bucket--signal .bonuses-grid { grid-template-columns: 1fr; } }
+  @media (min-width: 1000px) { .bucket--signal .bonuses-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) { .bucket { padding: 24px 20px; } }
   .bonus { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 200ms ease; display: flex; flex-direction: column; gap: 12px; }
   .bonus:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(16,16,16,0.06); border-color: var(--vs-purple-tint); }
   .bonus-cover {
@@ -231,8 +252,10 @@
   .features { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 1080px; margin: 0 auto; }
   @media (min-width: 700px) { .features { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1000px) { .features { grid-template-columns: repeat(3, 1fr); } }
-  .feature { padding: 24px; border: 1px solid var(--border); border-radius: 14px; background: #fff; }
-  .feature-icon { width: 40px; height: 40px; border-radius: 10px; background: #F0F6FF; color: var(--vs-blue); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 14px; }
+  .feature { border: 1px solid var(--border); border-radius: 14px; background: #fff; overflow: hidden; display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+  .feature:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(16,16,16,0.07); border-color: var(--vs-purple-tint); }
+  .feature-img { aspect-ratio: 16 / 10; background: linear-gradient(135deg, #F0F6FF, #F4ECFF); background-size: cover; background-position: top center; border-bottom: 1px solid var(--border); }
+  .feature-body { padding: 20px 22px 24px; }
   .feature h4 { margin-bottom: 6px; }
   .feature p { font-size: 14px; line-height: 1.55; }
 
@@ -316,7 +339,7 @@
       <div class="voice-card">
         <div class="voice-photo" style="background-image:url('../chris.jpg'); background-size:cover; background-position:center;"></div>
         <div class="name">Chris Cunningham</div>
-        <div class="role">Ex-ClickUp · Founding Ambassador</div>
+        <div class="role">ClickUp, Vista Social</div>
         <a href="https://chriscunningham.com" target="_blank">chriscunningham.com →</a>
       </div>
       <div class="voice-content">
@@ -354,88 +377,113 @@
   <div class="container">
     <div class="bonuses-header">
       <span class="eyebrow">Bonus stack</span>
-      <h2>Five resources, free when you start your trial.</h2>
-      <p class="lead" style="margin-top:14px;">Each resource is co-branded with Chris — built by Vista Social, curated by Chris for his audience. Delivered to your inbox the moment your trial starts.</p>
+      <h2>A save-worthy stack, not a feature dump.</h2>
+      <p class="lead" style="margin-top:14px;">Three things that actually move the needle: tools you'll use, assets that make you look smarter, and the signal you can't get anywhere else. Co-branded with Chris, delivered the moment your trial starts.</p>
       <div class="value-line">Total value: <strong>$1,940</strong></div>
     </div>
 
-    <div class="bonuses-grid">
-      <div class="bonus">
-        <div class="bonus-cover cover-1" style="background: url('bonus/bonus-01-playbook.png') center/cover, linear-gradient(135deg, #0063E3, #8C52FF);">
-          <div class="bonus-cobrand">
-            <span class="ambassador">Chris</span>
-            <span class="vs">× Vista Social</span>
-          </div>
-          <span>The Vista Social Setup Playbook</span>
-        </div>
-        <h4>The Vista Social Setup Playbook</h4>
-        <p>Step-by-step setup of your accounts, channels, and posting cadence — the exact way Chris runs his.</p>
-        <div class="meta"><span>PDF · 18 pages</span><span class="value">$240 value</span></div>
+    <div class="bucket bucket--tools">
+      <div class="bucket-head">
+        <span class="bucket-num">01</span>
+        <h3 class="bucket-title">Tools you'll actually use</h3>
+        <p class="bucket-sub">The operator kit — playbook, calendar, audit. Open them Monday morning.</p>
       </div>
-
-      <div class="bonus">
-        <div class="bonus-cover cover-2" style="background: url('bonus/bonus-02-ai-prompts.png') center/cover, linear-gradient(135deg, #8C52FF, #FF66C4);">
-          <div class="bonus-cobrand">
-            <span class="ambassador">Chris</span>
-            <span class="vs">× Vista Social</span>
+      <div class="bonuses-grid">
+        <div class="bonus">
+          <div class="bonus-cover cover-1" style="background: url('bonus/bonus-01-playbook.png') center/cover, linear-gradient(135deg, #0063E3, #8C52FF);">
+            <div class="bonus-cobrand">
+              <span class="ambassador">Chris</span>
+              <span class="vs">× Vista Social</span>
+            </div>
+            <span>The Vista Social Setup Playbook</span>
           </div>
-          <span>50 AI Prompts for Social Content</span>
+          <h4>The Vista Social Setup Playbook</h4>
+          <p>Step-by-step setup of your accounts, channels, and posting cadence — the exact way Chris runs his.</p>
+          <div class="meta"><span>PDF · 18 pages</span><span class="value">$240 value</span></div>
         </div>
-        <h4>50 AI Prompts for Social Content</h4>
-        <p>The prompt pack that powers Chris's caption library — copy/paste-ready for the Vista Social AI assistant.</p>
-        <div class="meta"><span>PDF + Notion</span><span class="value">$190 value</span></div>
+
+        <div class="bonus">
+          <div class="bonus-cover cover-3" style="background: url('bonus/bonus-03-calendar.png') center/cover, linear-gradient(135deg, #FF66C4, #FFA0DA);">
+            <div class="bonus-cobrand">
+              <span class="ambassador">Chris</span>
+              <span class="vs">× Vista Social</span>
+            </div>
+            <span>The 12-Month Content Calendar</span>
+          </div>
+          <h4>12-Month Content Calendar Template</h4>
+          <p>Pre-built calendar with seasonal hooks, posting cadence, and pillar mapping. Drop your topics in and ship.</p>
+          <div class="meta"><span>Sheet + Notion</span><span class="value">$350 value</span></div>
+        </div>
+
+        <div class="bonus">
+          <div class="bonus-cover cover-4" style="background: url('bonus/bonus-04-audit.png') center/cover, linear-gradient(135deg, #3081E8, #0063E3);">
+            <div class="bonus-cobrand">
+              <span class="ambassador">Chris</span>
+              <span class="vs">× Vista Social</span>
+            </div>
+            <span>Social Media Audit Template</span>
+          </div>
+          <h4>Social Media Audit Template</h4>
+          <p>The audit framework Chris uses with new clients. Score any account in 20 minutes.</p>
+          <div class="meta"><span>Sheet · 60+ checks</span><span class="value">$280 value</span></div>
+        </div>
       </div>
+    </div>
 
-      <div class="bonus">
-        <div class="bonus-cover cover-3" style="background: url('bonus/bonus-03-calendar.png') center/cover, linear-gradient(135deg, #FF66C4, #FFA0DA);">
-          <div class="bonus-cobrand">
-            <span class="ambassador">Chris</span>
-            <span class="vs">× Vista Social</span>
-          </div>
-          <span>The 12-Month Content Calendar</span>
-        </div>
-        <h4>12-Month Content Calendar Template</h4>
-        <p>Pre-built calendar with seasonal hooks, posting cadence, and pillar mapping. Drop your topics in and ship.</p>
-        <div class="meta"><span>Sheet + Notion</span><span class="value">$350 value</span></div>
+    <div class="bucket bucket--smarter">
+      <div class="bucket-head">
+        <span class="bucket-num">02</span>
+        <h3 class="bucket-title">Things that make you look smarter</h3>
+        <p class="bucket-sub">Prompts and frameworks you'll quote in client meetings.</p>
       </div>
-
-      <div class="bonus">
-        <div class="bonus-cover cover-4" style="background: url('bonus/bonus-04-audit.png') center/cover, linear-gradient(135deg, #3081E8, #0063E3);">
-          <div class="bonus-cobrand">
-            <span class="ambassador">Chris</span>
-            <span class="vs">× Vista Social</span>
+      <div class="bonuses-grid">
+        <div class="bonus">
+          <div class="bonus-cover cover-2" style="background: url('bonus/bonus-02-ai-prompts.png') center/cover, linear-gradient(135deg, #8C52FF, #FF66C4);">
+            <div class="bonus-cobrand">
+              <span class="ambassador">Chris</span>
+              <span class="vs">× Vista Social</span>
+            </div>
+            <span>50 AI Prompts for Social Content</span>
           </div>
-          <span>Social Media Audit Template</span>
+          <h4>50 AI Prompts for Social Content</h4>
+          <p>The prompt pack that powers Chris's caption library — copy/paste-ready for the Vista Social AI assistant.</p>
+          <div class="meta"><span>PDF + Notion</span><span class="value">$190 value</span></div>
         </div>
-        <h4>Social Media Audit Template</h4>
-        <p>The audit framework Chris uses with new clients. Score any account in 20 minutes.</p>
-        <div class="meta"><span>Sheet · 60+ checks</span><span class="value">$280 value</span></div>
+
+        <div class="bonus">
+          <div class="bonus-cover cover-5" style="background: url('bonus/bonus-05-course.png') center/cover, linear-gradient(135deg, #B894FF, #8C52FF);">
+            <div class="bonus-cobrand">
+              <span class="ambassador">Chris</span>
+              <span class="vs">× Vista Social</span>
+            </div>
+            <span>Mini-Course: Social in 30 Days</span>
+          </div>
+          <h4>Mini-Course: Social Media in 30 Days</h4>
+          <p>5-part email course on building a content engine that runs without you. Written by Vista Social, intro'd by Chris.</p>
+          <div class="meta"><span>5 emails · drip</span><span class="value">$880 value</span></div>
+        </div>
       </div>
+    </div>
 
-      <div class="bonus">
-        <div class="bonus-cover cover-5" style="background: url('bonus/bonus-05-course.png') center/cover, linear-gradient(135deg, #B894FF, #8C52FF);">
-          <div class="bonus-cobrand">
-            <span class="ambassador">Chris</span>
-            <span class="vs">× Vista Social</span>
-          </div>
-          <span>Mini-Course: Social in 30 Days</span>
-        </div>
-        <h4>Mini-Course: Social Media in 30 Days</h4>
-        <p>5-part email course on building a content engine that runs without you. Written by Vista Social, intro'd by Chris.</p>
-        <div class="meta"><span>5 emails · drip</span><span class="value">$880 value</span></div>
+    <div class="bucket bucket--signal">
+      <div class="bucket-head">
+        <span class="bucket-num">03</span>
+        <h3 class="bucket-title">Signal</h3>
+        <p class="bucket-sub">What's actually happening on the platforms — straight from Vista Social.</p>
       </div>
-
-      <div class="bonus" style="background: linear-gradient(135deg, rgba(0,99,227,0.04), rgba(140,82,255,0.04), rgba(255,102,196,0.04)); border-color: var(--vs-purple-tint);">
-        <div class="bonus-cover" style="background: url('bonus/bonus-06-trends.png') center/cover, linear-gradient(135deg, #0A0F1F, #1F2547);">
-          <div class="bonus-cobrand">
-            <span class="ambassador">EXCLUSIVE</span>
-            <span class="vs">× Vista Social</span>
+      <div class="bonuses-grid">
+        <div class="bonus" style="background: #fff; border-color: rgba(255,255,255,0.18); box-shadow: 0 24px 48px rgba(10,15,31,0.35);">
+          <div class="bonus-cover" style="background: url('bonus/bonus-06-trends.png') center/cover, linear-gradient(135deg, #0A0F1F, #1F2547);">
+            <div class="bonus-cobrand">
+              <span class="ambassador">EXCLUSIVE</span>
+              <span class="vs">× Vista Social</span>
+            </div>
+            <span>The Quarterly Trends Report</span>
           </div>
-          <span>The Quarterly Trends Report</span>
+          <h4>State of Social — Trends Report</h4>
+          <p>Vista Social's quarterly insights on platform shifts, algorithm changes, and what's actually working — gated for ambassador audiences.</p>
+          <div class="meta"><span>PDF · ~20 pages</span><span class="value">Subscriber-only</span></div>
         </div>
-        <h4>State of Social — Trends Report</h4>
-        <p>Vista Social's quarterly insights on platform shifts, algorithm changes, and what's actually working — gated for ambassador audiences.</p>
-        <div class="meta"><span>PDF · ~20 pages</span><span class="value">Subscriber-only</span></div>
       </div>
     </div>
   </div>
@@ -451,34 +499,46 @@
     </div>
     <div class="features">
       <div class="feature">
-        <div class="feature-icon">📅</div>
-        <h4>Schedule everywhere</h4>
-        <p>Instagram, TikTok, LinkedIn, Facebook, X, YouTube, Pinterest, Threads, Bluesky, Google Business — all from one calendar.</p>
+        <div class="feature-img" style="background-image: url('feature-images/schedule.png');" role="img" aria-label="Vista Social shared calendar screenshot"></div>
+        <div class="feature-body">
+          <h4>Schedule everywhere</h4>
+          <p>Instagram, TikTok, LinkedIn, Facebook, X, YouTube, Pinterest, Threads, Bluesky, Google Business — all from one calendar.</p>
+        </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">🤖</div>
-        <h4>AI assistant built-in</h4>
-        <p>Captions, hashtags, replies, content ideas — generated in your brand voice. No prompt engineering required.</p>
+        <div class="feature-img" style="background-image: url('feature-images/ai-assistant.png');" role="img" aria-label="Vista Social AI assistant composer screenshot"></div>
+        <div class="feature-body">
+          <h4>AI assistant built-in</h4>
+          <p>Captions, hashtags, replies, content ideas — generated in your brand voice. No prompt engineering required.</p>
+        </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">💬</div>
-        <h4>One inbox for everything</h4>
-        <p>Comments, DMs, mentions across every platform. Assign to teammates, never miss a reply.</p>
+        <div class="feature-img" style="background-image: url('feature-images/inbox.png');" role="img" aria-label="Vista Social social inbox screenshot"></div>
+        <div class="feature-body">
+          <h4>One inbox for everything</h4>
+          <p>Comments, DMs, mentions across every platform. Assign to teammates, never miss a reply.</p>
+        </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">📊</div>
-        <h4>Reports clients actually read</h4>
-        <p>White-labeled, branded, automated. The report that lands in their inbox looks like you built it.</p>
+        <div class="feature-img" style="background-image: url('feature-images/reports.png');" role="img" aria-label="Vista Social reports screenshot"></div>
+        <div class="feature-body">
+          <h4>Reports clients actually read</h4>
+          <p>White-labeled, branded, automated. The report that lands in their inbox looks like you built it.</p>
+        </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">👥</div>
-        <h4>Built for teams &amp; agencies</h4>
-        <p>Approval workflows, client logins, profile permissions — at a flat per-account price, no per-seat tax.</p>
+        <div class="feature-img" style="background-image: url('feature-images/teams.png');" role="img" aria-label="Vista Social approval workflows screenshot"></div>
+        <div class="feature-body">
+          <h4>Built for teams &amp; agencies</h4>
+          <p>Approval workflows, client logins, and profile permissions, so adding a client does not mean rebuilding your process.</p>
+        </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">🎧</div>
-        <h4>Listen + respond, in one place</h4>
-        <p>Brand mentions, review monitoring, social listening — without bouncing between five tools.</p>
+        <div class="feature-img" style="background-image: url('feature-images/listen.png');" role="img" aria-label="Vista Social reviews and listening screenshot"></div>
+        <div class="feature-body">
+          <h4>Listen + respond, in one place</h4>
+          <p>Brand mentions, review monitoring, social listening — without bouncing between five tools.</p>
+        </div>
       </div>
     </div>
   </div>
