@@ -150,6 +150,32 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
   .hero-grid,.g3,.g2,.money,.steps{grid-template-columns:1fr;}
     .hero{padding:56px 0 52px;}
 }
+
+/* ---------- proof bar ---------- */
+.proof{border-bottom:1px solid var(--line);background:#fff;padding:34px 0;}
+.proof-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 28px;}
+.proof-badge{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;color:var(--ink);}
+.proof-badge svg{width:17px;height:17px;color:var(--vs-blue);flex:none;}
+.proof-sep{width:1px;height:22px;background:var(--line);}
+.proof-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 26px;margin-top:22px;}
+.proof-logos span{font-size:15px;font-weight:600;letter-spacing:.06em;color:#9AA3B2;text-transform:uppercase;}
+.proof-label{text-align:center;font-size:13px;color:var(--muted);margin:0 0 4px;}
+
+/* ---------- ambassador showcase ---------- */
+.amb-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:44px;}
+.amb{text-align:center;}
+.amb-ring{width:112px;height:112px;margin:0 auto 16px;border-radius:9999px;padding:3px;
+  background:linear-gradient(135deg,#0063E3,#8C52FF 55%,#D15EDC);display:flex;align-items:center;justify-content:center;}
+.amb-photo{width:100%;height:100%;border-radius:9999px;border:3px solid #fff;background:#EAF3FF center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;color:var(--vs-blue);font-weight:600;font-size:26px;letter-spacing:.02em;}
+.amb h3{font-size:17px;margin:0 0 2px;}
+.amb .role{font-size:13.5px;color:var(--vs-blue);font-weight:500;margin:0 0 8px;}
+.amb .bio{font-size:14px;color:var(--muted);margin:0;line-height:1.5;}
+.amb.open .amb-ring{background:none;border:2px dashed #C9D4E4;padding:1px;}
+.amb.open .amb-photo{background:var(--surface-alt);border-color:var(--surface-alt);color:#B6C0D0;font-size:30px;font-weight:400;}
+.amb.open h3{color:var(--muted);font-weight:500;}
+.amb.open .role{color:#9AA3B2;}
+@media (max-width:1100px){ .amb-grid{grid-template-columns:repeat(3,1fr);} }
 </style>
 </head>
 <body>
@@ -185,8 +211,8 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
     <div class="hero-grid">
       <div>
         <div class="eyebrow-wrap"><span class="chip chip-d"><svg class="chip-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 13.8 9 19.6 10.8 13.8 12.6 12 18.4 10.2 12.6 4.4 10.8 10.2 9Z"/></svg> Vista Social Ambassador Program</span></div>
-        <h1>For the people <span class="grad-d">moving social forward</span></h1>
-        <p class="lead">Recommend a tool you already use, earn on it for as long as your referrals stay. Lifetime commission, paid every 30 days, plus the access, intel, and recognition serious creators actually want.</p>
+        <h1>For the people who make brands <span class="grad-d">impossible to ignore</span></h1>
+        <p class="lead">You already teach, build, and show people how social actually works. The Ambassador Program pays you for the customers that work brings in, at the top rate, for as long as they stay. Lifetime commission, paid every 30 days, plus the access, intel, and recognition serious creators actually want.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#apply">Apply to join &rarr;</a>
           <a class="btn btn-ghost" href="#lifetime">See what you earn</a>
@@ -214,10 +240,71 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
   </div>
 </section>
 
+<div class="proof">
+  <div class="wrap">
+    <div class="proof-in">
+      <span class="proof-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 14.6 9.1l6.2.7-4.6 4.2 1.3 6.1L12 17l-5.5 3.1 1.3-6.1L3.2 9.8l6.2-.7Z"/></svg> #1 Easiest to use on G2</span>
+      <span class="proof-sep"></span>
+      <span class="proof-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 14.6 9.1l6.2.7-4.6 4.2 1.3 6.1L12 17l-5.5 3.1 1.3-6.1L3.2 9.8l6.2-.7Z"/></svg> #1 ranked social media management tool</span>
+      <span class="proof-sep"></span>
+      <span class="proof-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 14.6 9.1l6.2.7-4.6 4.2 1.3 6.1L12 17l-5.5 3.1 1.3-6.1L3.2 9.8l6.2-.7Z"/></svg> Users Love Us, G2 Spring 2026</span>
+    </div>
+    <p class="proof-label" style="margin-top:24px;">The product you would be recommending is already trusted by teams at</p>
+    <div class="proof-logos" style="margin-top:8px;">
+      <span>ClickUp</span><span>Kia</span><span>Lensa</span><span>Martell</span><span>NVIDIA</span><span>Oracle</span><span>Serhant</span>
+    </div>
+  </div>
+</div>
+
+<section id="ambassadors">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow-wrap"><span class="chip"><svg class="chip-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 13.8 9 19.6 10.8 13.8 12.6 12 18.4 10.2 12.6 4.4 10.8 10.2 9Z"/></svg> The ambassadors</span></div>
+      <h2>The people already in the program</h2>
+      <p class="lede">Educators, podcasters, and community leaders whose audiences act on what they say. The first 25 accepted become Founding Ambassadors.</p>
+    </div>
+    <!-- Swap the four "open" cards below for real ambassadors as they are accepted.
+         Card pattern: .amb > .amb-ring > .amb-photo (background-image for a headshot,
+         or initials as text), then h3 name, .role, .bio. -->
+    <div class="amb-grid">
+      <div class="amb">
+        <div class="amb-ring"><div class="amb-photo">CC</div></div>
+        <h3>Chris Cunningham</h3>
+        <p class="role">ClickUp</p>
+        <p class="bio">Built ClickUp's social presence from zero. Teaches B2B social to an audience of operators.</p>
+      </div>
+      <div class="amb open">
+        <div class="amb-ring"><div class="amb-photo">+</div></div>
+        <h3>Founding slot open</h3>
+        <p class="role">Applications reviewed weekly</p>
+        <p class="bio">Marketing educators and course creators.</p>
+      </div>
+      <div class="amb open">
+        <div class="amb-ring"><div class="amb-photo">+</div></div>
+        <h3>Founding slot open</h3>
+        <p class="role">Applications reviewed weekly</p>
+        <p class="bio">Podcasters and YouTubers in the marketing and agency space.</p>
+      </div>
+      <div class="amb open">
+        <div class="amb-ring"><div class="amb-photo">+</div></div>
+        <h3>Founding slot open</h3>
+        <p class="role">Applications reviewed weekly</p>
+        <p class="bio">Community leaders running engaged Slacks, Discords, and groups.</p>
+      </div>
+      <div class="amb open">
+        <div class="amb-ring"><div class="amb-photo">+</div></div>
+        <h3>Founding slot open</h3>
+        <p class="role">Applications reviewed weekly</p>
+        <p class="bio">In-house social leads who teach and speak publicly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="lifetime">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow-wrap"><span class="chip"><svg class="chip-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 13.8 9 19.6 10.8 13.8 12.6 12 18.4 10.2 12.6 4.4 10.8 10.2 9Z"/></svg> The money</span></div>
+      <div class="eyebrow-wrap"><span class="chip"><svg class="chip-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 13.8 9 19.6 10.8 13.8 12.6 12 18.4 10.2 12.6 4.4 10.8 10.2 9Z"/></svg> What you earn</span></div>
       <h2>Every customer you bring <span class="grad">stays yours</span></h2>
       <p class="lede">Other programs pay you for a year or two, then quietly keep the customer you found them. This one does not expire. Every ambassador starts at the top rate, and you keep earning on an account for as long as it keeps paying.</p>
     </div>
@@ -225,7 +312,7 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
     <div class="money">
       <div class="card">
         <span class="big">30% for life</span>
-        <p>On everything your referrals spend. Base plan, upgrades, add-ons. No 12-month cliff, no step-down.</p>
+        <p>On everything your referrals spend. Base plan, upgrades, add-ons. If they move up a plan or add API access two years from now, you earn on that too. No cliff, no step-down.</p>
       </div>
       <div class="card">
         <span class="big">Every 30 days</span>
@@ -244,7 +331,7 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
         <li>Next quarter's referrals stack on top of them instead of replacing them.</li>
         <li>As your referrals grow their teams and upgrade plans, your share of that account grows with them.</li>
       </ol>
-      <p>A 12-month program resets your income every year. This one builds a base you keep adding to, which is the difference between a payout and a revenue stream.</p>
+      <p>A 12-month program resets your income every year. Vista Social’s program builds a base you keep adding to, which is the difference between a payout and a revenue stream.</p>
     </div>
 
   </div>
@@ -263,7 +350,7 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
 <section>
   <div class="wrap">
     <div class="section-head center">
-      <div class="eyebrow-wrap"><span class="chip"><svg class="chip-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 13.8 9 19.6 10.8 13.8 12.6 12 18.4 10.2 12.6 4.4 10.8 10.2 9Z"/></svg> Who it is for</span></div>
+      <div class="eyebrow-wrap"><span class="chip"><svg class="chip-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 13.8 9 19.6 10.8 13.8 12.6 12 18.4 10.2 12.6 4.4 10.8 10.2 9Z"/></svg> Who this is for</span></div>
       <h2>Built For Creators</h2>
       <p class="lede">If you fit one of these, you are who we built this for.</p>
     </div>
@@ -275,7 +362,6 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
       <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 20.4V5.1c0-.7.6-1.3 1.3-1.3h8c.7 0 1.3.6 1.3 1.3v15.3"/><path d="M2.8 20.4h13"/><path d="M7.4 7.6h1.6M7.4 11.2h1.6M7.4 14.8h1.6"/><circle cx="18.4" cy="16.6" r="3.4" stroke="#8C52FF"/><path d="m17 16.6 1 1 1.8-2" stroke="#8C52FF"/></svg></span><h3>In-house social leads</h3><p>At recognizable brands, who teach or speak publicly.</p></div>
       <div class="card" style="background:var(--tint-blue);border-color:#CFE3FF;"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8 13.9 9 20 10.9 13.9 12.8 12 19 10.1 12.8 4 10.9 10.1 9Z"/><path d="M18.6 3.4 19.3 5.5 21.4 6.2 19.3 6.9 18.6 9 17.9 6.9 15.8 6.2 17.9 5.5Z" stroke="#8C52FF"/></svg></span><h3>The common thread</h3><p>You actively produce real content for an audience that trusts you. Famous is not required. Real is.</p></div>
     </div>
-    <p class="lede" style="margin-top:28px;"><strong style="color:var(--ink);font-weight:600;">This is not for:</strong> coupon and deal sites, link-dumping partner networks, anyone whose primary tactic is paid search on Vista Social brand keywords, or black-hat plays such as fake reviews and incentivized review farms.</p>
   </div>
 </section>
 
@@ -296,7 +382,7 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
           <li><strong>90-day cookie</strong>, so slow decisions still land with you.</li>
           <li><strong>Community First option.</strong> Redirect part or all of your commission into a deeper discount for your audience. Activate 100 or more this way and unlock the Community First designation.</li>
           <li><strong>Concierge onboarding</strong> for anyone you refer. They skip the line and get a real human walking them through setup.</li>
-          <li><strong>Bring someone in.</strong> Sponsor up to 2 new ambassadors per year and earn a 5% override on their commissions for 12 months. We pay it, it does not reduce theirs.</li>
+          <li><strong>Bring someone in.</strong> Sponsor up to 2 new ambassadors per year and earn a 5% override bonus on their commissions for 12 months. We pay it, it does not reduce theirs.</li>
         </ul>
       </div>
 
@@ -317,7 +403,7 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
         <ul>
           <li><strong>Monthly Trends Brief.</strong> Algorithm shifts, format trends, what is working right now. Sent to ambassadors before any of it goes public.</li>
           <li><strong>Quarterly State of Social report.</strong> Our read on what actually changed across the platforms, what the research supports, and what to do about it next quarter.</li>
-          <li><strong>Algorithm change alerts.</strong> Same-day breakdowns when LinkedIn, Instagram, TikTok, or any platform shifts ranking.</li>
+          <li><strong>Algorithm change alerts in the private channel.</strong> When LinkedIn, Instagram, TikTok, or any platform shifts ranking, we post the breakdown and the group works out what it means in practice.</li>
           <li><strong>Viral teardowns.</strong> Short briefs on what is blowing up and why.</li>
           <li>Private webinars with our team and outside guest experts.</li>
           <li>Contributor credit on the State of Social report when your field intel feeds in.</li>
@@ -329,14 +415,14 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
         <span class="tag">For your craft</span>
         <h3>Access and reputation</h3>
         <ul>
-          <li>Priority access to every beta and unreleased feature before anyone else.</li>
-          <li>Quarterly 1:1 with Vista Social's performance marketer. 60 minutes, every quarter, on whatever you want to talk about.</li>
-          <li>Working access to our social media managers and support team for tactical questions.</li>
-          <li>Speaking slots on Vista Social webinars, virtual summits, and in-person events.</li>
+          <li>Early access to betas and unreleased features, ahead of general availability, wherever the product team can open them up.</li>
+          <li><strong>Quarterly 1:1 with Vista Social's performance marketer.</strong> Sixty minutes on your numbers, not ours. What your audience is responding to, which formats are worth more of your time, where your funnel leaks, and what to test next. Bring a campaign, a landing page, or a question.</li>
+          <li>A private ambassador channel with our social media managers and support team, for tactical questions and same-day answers.</li>
+          <li>Speaking opportunities on select Vista Social webinars, virtual summits, and in-person events.</li>
           <li>Content collabs. Co-authored posts, interviews, sneak-peek demos, podcast guest spots.</li>
           <li>Guest posting on the Vista Social blog.</li>
-          <li>10% to 100% off your own Vista Social plan, set during onboarding.</li>
-          <li>A direct line to a real human on the Vista Social team. Not a queue.</li>
+          <li>A discount on your own Vista Social plan, set during onboarding.</li>
+          
         </ul>
       </div>
 
@@ -359,15 +445,13 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
     <div class="section-head">
       <div class="eyebrow-wrap"><span class="chip chip-d"><svg class="chip-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 13.8 9 19.6 10.8 13.8 12.6 12 18.4 10.2 12.6 4.4 10.8 10.2 9Z"/></svg> What we ask</span></div>
       <h2>A real partnership cuts both ways</h2>
-      <p class="lede">This is not a list to get on and forget. Ambassadors who go quiet are removed at the annual review. The shortlist stays short on purpose. That is what makes being on it mean something.</p>
+      <p class="lede">A real partnership runs both ways. Here is our side of it, and here is what we ask back.</p>
     </div>
     <ul class="asks">
       <li><span class="n">1</span><span><strong>Publish once a quarter.</strong> One piece of authentic content in your format. A review, tutorial, case study, podcast mention, newsletter, or video.</span></li>
       <li><span class="n">2</span><span><strong>Send field intel back.</strong> Respond to occasional pulse surveys and share what you are seeing. Your input goes into the reports you also receive.</span></li>
       <li><span class="n">3</span><span><strong>Disclose properly.</strong> FTC disclosure on anything promotional. Standard practice.</span></li>
-      <li><span class="n">4</span><span><strong>Expect a real annual review.</strong> Not a formality. Inactive ambassadors are removed from the program, and re-application is allowed.</span></li>
-      <li><span class="n">5</span><span><strong>No black-hat plays.</strong> No brand bidding on Vista Social keywords, no fake reviews, no coupon-farm distribution, no misleading claims about the product.</span></li>
-      <li><span class="n">6</span><span><strong>Be a real Vista Social user.</strong> You cannot promote something you do not use. We will know, and so will your audience.</span></li>
+      <li><span class="n">4</span><span><strong>Use Vista Social yourself.</strong> We believe the best advocates for a product are the ones using it day to day.</span></li>
     </ul>
   </div>
 </section>
@@ -387,7 +471,7 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
       <div class="step">
         <span class="num">Step 02</span>
         <h3>30-minute call</h3>
-        <p style="color:var(--muted);font-size:15.5px;margin:0;">If your application clears the bar, we will set up a call with Dawid, who runs the program. We walk through the details and figure out the right setup for you.</p>
+        <p style="color:var(--muted);font-size:15.5px;margin:0;">If we move your application forward, we will book a 30-minute call with our team to go over the program, hear your thoughts, and build a setup that works for you and your audience.</p>
       </div>
       <div class="step">
         <span class="num">Step 03</span>
@@ -411,6 +495,8 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
       <details open><summary>What do I actually earn?</summary><p>30% of everything your referrals spend, from your very first referral, for as long as those accounts keep paying. No starter rate to climb out of, no expiry date, no step-down. Base plans, upgrades, and add-ons all count.</p></details>
       <details><summary>What does "lifetime" actually mean?</summary><p>You earn your 30% on a referred account for as long as that account keeps paying. There is no 12-month window and no step-down. If they upgrade or add on, your share of that account goes up with it.</p></details>
       <details><summary>When do I get paid?</summary><p>Every 30 days. We keep the payout method flexible for ambassadors and set it up with you during onboarding.</p></details>
+      <details><summary>What if my referral is on an annual plan instead of monthly?</summary><p>Your 30% applies either way. Annual plans are discounted, so a single month's commission looks smaller. Annual customers also commit for longer and churn less, so across the life of the account an annual referral usually pays you more, not less.</p></details>
+      <details><summary>Who does not get accepted?</summary><p>Coupon and deal sites, link-dumping partner networks, anyone whose primary tactic is paid search on Vista Social brand keywords, and anyone running black-hat plays such as fake reviews or incentivized review farms. If that is the model, the answer is no.</p></details>
       <details><summary>How long does my referral link stay attached to someone?</summary><p>90 days. If they click your link and sign up any time inside that window, the referral is yours.</p></details>
       <details><summary>Can I leave the program?</summary><p>Anytime, with 30 days' notice. Your existing referrals keep paying out. Lifetime means lifetime, whether or not you are still active in the program.</p></details>
       <details><summary>Can I be removed from the program?</summary><p>Yes, and it matters which kind. If you go inactive, you lose your place in the program at the annual review, but your existing commissions continue. If you are removed for cause, meaning black-hat tactics, misleading customers, or breaking the terms, commissions stop with the removal.</p></details>
@@ -419,7 +505,7 @@ details p{margin:14px 0 0;color:var(--muted);font-size:15.5px;max-width:58em;}
       <details><summary>What happens if I am not accepted?</summary><p>We will tell you why. In most cases it is a fit issue rather than a quality issue, and we will say what would make a future application work.</p></details>
       <details><summary>Are commissions stackable with the discount on my own plan?</summary><p>Yes. Your plan discount and your referral commissions are separate.</p></details>
       <details><summary>What counts as one piece of content per quarter?</summary><p>Anything authentic in your native format. A YouTube video, a podcast mention, a newsletter feature, a tutorial post, a case study, a livestream demo. We are not counting words, we are looking for genuine work.</p></details>
-      <details><summary>Do I need to use Vista Social to apply?</summary><p>You need to be using it, or actively onboarding, by the time you are accepted. We do not accept partners who promote products they have not worked with.</p></details>
+      <details><summary>Do I need to use Vista Social to apply?</summary><p>You need to be using it, or actively onboarding, by the time you are accepted. We do not accept partners who promote products they have not worked with. We believe the best advocates for a product are the ones using it day to day.</p></details>
     </div>
   </div>
 </section>
