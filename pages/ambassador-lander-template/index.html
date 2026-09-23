@@ -132,9 +132,32 @@ section{padding:92px 0;}
   .nav-by{display:none;}
   .voice-card,.offer-box{padding:28px 24px;}
 }
+
+/* ---------- proof bar ---------- */
+.proof{border-bottom:1px solid var(--line);background:#fff;padding:32px 0;}
+.proof-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 28px;}
+.proof-badge{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;color:var(--ink);}
+.proof-badge svg{width:17px;height:17px;color:var(--vs-blue);flex:none;}
+.proof-sep{width:1px;height:22px;background:var(--line);}
+.proof-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 26px;margin-top:8px;}
+.proof-logos span{font-size:15px;font-weight:600;letter-spacing:.06em;color:#9AA3B2;text-transform:uppercase;}
+.proof-label{text-align:center;font-size:13px;color:var(--muted);margin:22px 0 0;}
 </style>
 </head>
 <body>
+<!--
+  AMBASSADOR LANDER TEMPLATE
+  Swap these per ambassador, everything else can stay as it is:
+    1. <title> and the meta description
+    2. Nav attribution: "Recommended by <name>"
+    3. Hero eyebrow chip and the lead paragraph: "<name>'s pick for <audience>"
+    4. Hero byline: initials in .avatar, name, role
+    5. The "In <name>'s words" section: heading and the three paragraphs, in their voice
+    6. "The <name> stack" heading, and the "Chris and Vista Social" co-brand line on each bonus card
+    7. The product section lead: "the social media tool <name> recommends for <audience>"
+    8. Footer disclosure: the ambassador's name
+  Do not change: the proof bar, the trial and discount terms, the bonus values, the disclosure wording.
+-->
 
 <header class="nav">
   <div class="wrap-wide nav-in">
@@ -168,8 +191,8 @@ section{padding:92px 0;}
     <div class="hero-grid">
       <div>
         <div class="eyebrow-wrap"><span class="chip chip-d"><svg class="chip-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 13.8 9 19.6 10.8 13.8 12.6 12 18.4 10.2 12.6 4.4 10.8 10.2 9Z"/></svg> Recommended by Chris Cunningham</span></div>
-        <h1>Chris's pick for <span class="grad-d">B2B social teams</span></h1>
-        <p class="lead">Start a 30-day Vista Social trial through this page and unlock Chris's full bonus stack: the templates, playbooks, and AI prompts he uses to run social, free.</p>
+        <h1>Make your brand <span class="grad-d">impossible to ignore</span></h1>
+        <p class="lead">Chris's pick for B2B social teams. Start a 30-day Vista Social trial through this page and unlock his full bonus stack: the templates, playbooks, and AI prompts he uses to run social, free.</p>
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg" href="#start">Start your 30-day trial &rarr;</a>
           <a class="btn btn-ghost btn-lg" href="#stack">See the stack</a>
@@ -196,6 +219,23 @@ section{padding:92px 0;}
     </div>
   </div>
 </section>
+
+<!-- AMBASSADOR: leave this proof bar as it is. Everything on it comes from vistasocial.com. -->
+<div class="proof">
+  <div class="wrap">
+    <div class="proof-in">
+      <span class="proof-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 14.6 9.1l6.2.7-4.6 4.2 1.3 6.1L12 17l-5.5 3.1 1.3-6.1L3.2 9.8l6.2-.7Z"/></svg> #1 Easiest to use on G2</span>
+      <span class="proof-sep"></span>
+      <span class="proof-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 14.6 9.1l6.2.7-4.6 4.2 1.3 6.1L12 17l-5.5 3.1 1.3-6.1L3.2 9.8l6.2-.7Z"/></svg> #1 ranked social media management tool</span>
+      <span class="proof-sep"></span>
+      <span class="proof-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 14.6 9.1l6.2.7-4.6 4.2 1.3 6.1L12 17l-5.5 3.1 1.3-6.1L3.2 9.8l6.2-.7Z"/></svg> Users Love Us, G2 Spring 2026</span>
+    </div>
+    <p class="proof-label">Already trusted by teams at</p>
+    <div class="proof-logos">
+      <span>ClickUp</span><span>Kia</span><span>Lensa</span><span>Martell</span><span>NVIDIA</span><span>Oracle</span><span>Serhant</span>
+    </div>
+  </div>
+</div>
 
 <section class="voice">
   <div class="wrap-narrow">
